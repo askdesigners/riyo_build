@@ -1,3 +1,36 @@
+Project notes
+=============
+
+### The Vagrant Way
+If you get Vagrant going, you can use it like this:
+
+To fire up the VM, run `vagrant up`
+
+To pause it and keep all the data there, run 'vagrant suspend'
+
+Then next time you want to work in it, run `vagrant up` again
+
+To destroy the VM run `vagrant destroy`
+
+To get into the VM with the command line (to import the DB for instance) run `vagrant ssh`
+
+Once in the VM you can run the following commands to sync the DB.
+
+Run this to create the DB >   
+`mysql -uroot -proot -e "create database koken;"`
+
+Run this to import the DB >   
+`mysql -uroot -proot koken < /var/www/data/initial.sql`
+
+If you make changes, then run this to make a new dump >   
+`mysqldump -uroot -proot koken > /var/www/data/initial.sql`
+
+### The non-Vagrant way
+Just use mamp and php myadmin to import the DB file found at `data/initial.sql`
+
+:p
+
+
 Scotch Box
 ==========
 
