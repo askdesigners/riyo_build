@@ -1,2 +1,4 @@
 .DS_STORE
 .vagrant
+public/storage/cache/*
+*.sublime-workspace

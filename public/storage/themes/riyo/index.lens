@@ -1,0 +1,173 @@
+<koken:include file="layouts/header.html" />
+
+<koken:if true="settings.index_show_slideshow">
+
+	<koken:load>
+
+		<koken:head>
+			<meta property="og:site_name" content="{{ site.title }}" />
+			<meta property="og:title" content="{{ site.title }}" />
+			<meta property="og:description" content="{{ site.description strip_html='true' }}" />
+			<meta property="og:type" content="website" />
+			<koken:first>
+			<meta property="og:image" content="{{ content.presets.medium_large.url }}" />
+			<meta property="og:image:width" content="{{ content.presets.medium_large.width }}" />
+			<meta property="og:image:height" content="{{ content.presets.medium_large.height }}" />
+			</koken:first>
+			<meta property="og:url" content="{{ location.site_url }}{{ location.here }}" />
+			<koken:not empty="profile.twitter">
+				<meta name="twitter:card" content="gallery" />
+				<meta name="twitter:site" content="@{{ profile.twitter }}" />
+				<meta name="twitter:creator" content="@{{ profile.twitter }}" />
+				<koken:loop limit="4">
+					<meta name="twitter:image{{ index }}" content="{{ content.presets.medium_large.cropped.url }}">
+				</koken:loop>
+			</koken:not>
+		</koken:head>
+
+	</koken:load>
+
+	<section>
+
+		<div id="home-slideshow">
+			<koken:pulse source="featured_albums" jsvar="pulse" link_to="advance" fallbacktext="No featured content found. Assign some in the Library." />
+			<div id="ss_spinner"></div>
+		</div>
+
+		<div id="home-slideshow-text" style="display:none;">
+			<koken:if true="settings.index_show_title">
+				<a id="home-slideshow-title-link" href="#">
+					<h4 id="home-slideshow-title">&nbsp;</h4>
+				</a>
+			</koken:if>
+
+			<koken:if true="settings.index_show_caption">
+				&nbsp;&nbsp;<span id="home-slideshow-caption">&nbsp;</span>
+			</koken:if>
+		</div>
+
+		<script>
+			pulse.on( 'start', function() {
+				$('#ss_spinner').addClass('loading');
+			});
+			pulse.on( 'waiting', function(e) {
+				if (e) {
+					$('#ss_spinner').addClass('loading');
+				} else {
+					$('#ss_spinner').removeClass('loading');
+				}
+			});
+			pulse.on( 'dataloaded', function() {
+				$('#ss_spinner').removeClass('loading');
+			});
+			pulse.on( 'transitionstart', function(e) {
+				$('#home-slideshow-text').show();
+				$('#home-slideshow-title').html(e.data.title || e.data.filename);
+				$('#home-slideshow-caption').html(e.data.caption);
+				$('#home-slideshow-title-link').attr("href", e.data.url).attr("title", e.data.title || e.data.filename);
+			});
+		</script>
+
+	</section>
+
+</koken:if>
+
+
+<koken:load source="essay" filter:id="1">
+
+	<section class="inner_margin">
+
+		<h2>{{essay.title}}</h2>
+		{{ essay.content paragraphs="true" }} 
+
+	</section>
+
+<koken:else>
+
+	<section>
+
+		<koken:note>This area displays the about essay.</koken:note>
+
+	</section>
+
+</koken:load>
+
+<koken:load source="essay" filter:id="3">
+
+	<section class="inner_margin">
+
+		<h2>{{essay.title}}</h2>
+		{{ essay.content paragraphs="true" }} 
+
+	</section>
+
+<koken:else>
+
+	<section>
+
+		<koken:note>This area displays the history essay.</koken:note>
+
+	</section>
+
+</koken:load>
+
+<koken:load source="album" filter:id="2">
+
+	<section class="inner_margin">
+
+		<h2>People</h2>
+		<ul>
+		<koken:loop>
+          <li>
+            <koken:link>
+              <koken:img />
+            </koken:link>
+            <koken:link>
+              {{ content.title | content.filename }}
+            </koken:link>
+          </li>
+        </koken:loop>
+        </ul>
+
+	</section>
+
+<koken:else>
+
+	<section>
+
+		<koken:note>This area displays the active members.</koken:note>
+
+	</section>
+
+</koken:load>
+
+<koken:load source="album" filter:id="5">
+
+	<section class="inner_margin">
+		
+		<ul>
+		<koken:loop>
+          <li>
+            <koken:link>
+              <koken:img />
+            </koken:link>
+            <koken:link>
+              {{ content.title | content.filename }}
+            </koken:link>
+          </li>
+        </koken:loop> 
+        </ul>
+
+	</section>
+
+<koken:else>
+
+	<section>
+
+		<koken:note>This area displays the inactive members.</koken:note>
+
+	</section>
+
+</koken:load>
+
+<koken:include file="layouts/footer.html" />
