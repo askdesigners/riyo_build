@@ -111,63 +111,144 @@
 
 </koken:load>
 
-<koken:load source="album" filter:id="2">
+<section class="members">
 
-	<section class="inner_margin">
+	<koken:load source="album" filter:id="2">
 
-		<h2>People</h2>
-		<ul>
-		<koken:loop>
-          <li>
-            <koken:link>
-              <koken:img />
-            </koken:link>
-            <koken:link>
-              {{ content.title | content.filename }}
-            </koken:link>
-          </li>
-        </koken:loop>
-        </ul>
+		<section class="inner_margin">
 
-	</section>
+			<h2>People</h2>
+			<ul>
+			<koken:loop>
+	          <li>
+	            <koken:link>
+	              <koken:img />
+	            </koken:link>
+	            <koken:link>
+	              {{ content.title | content.filename }}
+	            </koken:link>
+	          </li>
+	        </koken:loop>
+	        </ul>
 
-<koken:else>
+		</section>
 
-	<section>
+	<koken:else>
 
-		<koken:note>This area displays the active members.</koken:note>
+		<section>
 
-	</section>
+			<koken:note>This area displays the active members.</koken:note>
 
-</koken:load>
+		</section>
 
-<koken:load source="album" filter:id="5">
+	</koken:load>
 
-	<section class="inner_margin">
+	<koken:load source="album" filter:id="5">
+
+		<section class="inner_margin">
+			
+			<ul>
+			<koken:loop>
+	          <li>
+	            <koken:link>
+	              <koken:img />
+	            </koken:link>
+	            <koken:link>
+	              {{ content.title | content.filename }}
+	            </koken:link>
+	          </li>
+	        </koken:loop> 
+	        </ul>
+
+		</section>
+
+	<koken:else>
+
+		<section>
+
+			<koken:note>This area displays the inactive members.</koken:note>
+
+		</section>
+
+	</koken:load>
+
+</section>
+
+<section class="shows">
+
+	<koken:load source="set" filter:id="3">
+		<section class="inner_margin">
+			<h2>Repertoar</h2>
+			<ul>
+				<koken:loop>
+					<koken:include file="layouts/shows_loop.html" />
+				</koken:loop>
+	        </ul>
+		</section>
+
+	<koken:else>
+
+		<section>
+
+			<koken:note>This area displays the active shows set.</koken:note>
+
+		</section>
+
+	</koken:load>
+
+	<koken:load source="set" filter:id="8">
+		<section class="inner_margin">
+			<h2>Repertoar</h2>
+			<ul>
+				<koken:loop>
+					<koken:include file="layouts/shows_loop.html" />
+				</koken:loop>
+	        </ul>
+		</section>
+
+	<koken:else>
+
+		<section>
+
+			<koken:note>This area displays the inactive shows set.</koken:note>
+
+		</section>
+
+	</koken:load>
+
+</section>
+
+<section class="sponsors">
 		
-		<ul>
-		<koken:loop>
-          <li>
-            <koken:link>
-              <koken:img />
-            </koken:link>
-            <koken:link>
-              {{ content.title | content.filename }}
-            </koken:link>
-          </li>
-        </koken:loop> 
-        </ul>
+	<div class="sponsor">
+		<img src="" alt="" class="sponsorLogo">
+		<p></p>
+	</div>
 
-	</section>
+</section>
 
-<koken:else>
+<section class="references">
+	<ul>
+		<li>
+			<h4></h4>
+			<a href=""></a>
+		</li>
+		<li>
+			<h4></h4>
+			<a href=""></a>
+		</li>
+		<li>
+			<h4></h4>
+			<a href=""></a>
+		</li>
+		<li>
+			<h4></h4>
+			<a href=""></a>
+		</li>
+		<li>
+			<h4></h4>
+			<a href=""></a>
+		</li>
 
-	<section>
-
-		<koken:note>This area displays the inactive members.</koken:note>
-
-	</section>
-
-</koken:load>
-
-<koken:include file="layouts/footer.html" />
+	</ul>
+</section>
