@@ -402,7 +402,7 @@ section {
 	background-color: white;
 	height: 100vh;
 }
-#members {
+.members {
 	column-count: 5;
 	-webkit-column-count: 5;
 	column-width: 180px;
