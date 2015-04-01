@@ -1,7 +1,7 @@
 /* lets strip out the fonts we don't use */
-/*@import url("//hello.myfonts.net/count/2d973d");*/
 
-@font-face {
+/*@import url("//hello.myfonts.net/count/2d973d");*/
+/*@font-face {
 	font-family: 'Museo-700';
 	src: url('../font/2D973D_0_0.eot');
 	src: url('../font/2D973D_0_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_0_0.woff2') format('woff2'), url('../font/2D973D_0_0.woff') format('woff'), url('../font/2D973D_0_0.ttf') format('truetype');
@@ -10,256 +10,37 @@
 	font-family: 'Museo-500';
 	src: url('../font/2D973D_1_0.eot');
 	src: url('../font/2D973D_1_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_1_0.woff2') format('woff2'), url('../font/2D973D_1_0.woff') format('woff'), url('../font/2D973D_1_0.ttf') format('truetype');
-}
+}*/
 @font-face {
 	font-family: 'MuseoSans-500';
 	src: url('../font/2D973D_2_0.eot');
 	src: url('../font/2D973D_2_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_2_0.woff2') format('woff2'), url('../font/2D973D_2_0.woff') format('woff'), url('../font/2D973D_2_0.ttf') format('truetype');
 }
-@font-face {
+/*@font-face {
 	font-family: 'MuseoSans-500Italic';
 	src: url('../font/2D973D_3_0.eot');
 	src: url('../font/2D973D_3_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_3_0.woff2') format('woff2'), url('../font/2D973D_3_0.woff') format('woff'), url('../font/2D973D_3_0.ttf') format('truetype');
-}
+}*/
 @font-face {
 	font-family: 'MuseoSlab-500';
 	src: url('../font/2D973D_4_0.eot');
 	src: url('../font/2D973D_4_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_4_0.woff2') format('woff2'), url('../font/2D973D_4_0.woff') format('woff'), url('../font/2D973D_4_0.ttf') format('truetype');
 }
-@font-face {
+/*@font-face {
 	font-family: 'MuseoSlab-500Italic';
 	src: url('../font/2D973D_5_0.eot');
 	src: url('../font/2D973D_5_0.eot?#iefix') format('embedded-opentype'), url('../font/2D973D_5_0.woff2') format('woff2'), url('../font/2D973D_5_0.woff') format('woff'), url('../font/2D973D_5_0.ttf') format('truetype');
-}
-.comma_sep span:after {
-	content: ", ";
-}
-.comma_sep span:last-child:after {
-	content: "";
-}
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
-	color: inherit;
-}
-hr {
-	border-top-color: rgba(0, 0, 0, 0.2);
-}
-label {
-	display: inline-block;
-	max-width: 100%;
-	margin-bottom: 5px;
-	font-weight: 700;
-}
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
-	display: block;
-	width: 100%;
-	height: 34px;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #555;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-}
-button {
-	display: inline-block;
-	padding: 6px 12px;
-	margin-bottom: 0;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.42857143;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	color: #fff;
-	background-color: #337ab7;
-	border-color: #2e6da4;
-}
-textarea[rows] {
-	height: auto;
-}
-textarea {
-	max-width: 100%;
-}
-
-/*
-	LAYOUT
-*/
-div.container {
-	width: 960px;
-	margin: 0 auto;
-	text-align: left;
-}
-header.main {
-	margin-bottom: 3em;
-}
-footer.main {
-	clear: both;
-	padding-bottom: 2em;
-}
-nav {
-	margin: 1em 0;
-}
-nav ul {
-	margin: 0;
-	padding: 0;
-}
-nav ul li {
-	display: inline-block;
-	margin: 0 15px 0 0;
-}
-
-/* highlights navigation link for current page - assigned automatically by Koken */
-nav a.k-nav-current, nav a.k-pagination-current {
-	font-weight: bold;
-}
-#pagination {
-	margin-bottom: 2em;
-}
-main {
-	display: block;
-	margin-bottom: 3em;
-}
-article {
-	margin-bottom: 3em;
-}
-section {
-	margin-bottom: 2em;
-}
-section header {
-	margin-bottom: 2em;
-}
-footer {
-	font-size: 90%;
-}
-.slideshow_nav {
-	margin-bottom: 1em;
-	clear: both;
-}
-ul.blank {
-	list-style: none;
-	padding: 0;
-	margin: 0 0 1em;
-}
-ul.blank li {
-	padding: 0;
-	margin: 0;
-	display: block;
-}
-ul.feat-essays {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-ul.feat-essays li {
-	margin: 0;
-	padding: 0;
-	float: left;
-	width: 22%;
-}
-ul.feat-essays li {
-	margin-right: 4%;
-}
-ul.feat-essays li:nth-child(4n+4) {
-	margin-right: 0;
-}
-ul.feat-essays li:nth-child(4n+1) {
-	clear: left;
-}
-#bread {
-	font-size: 90%;
-	margin-top: 0;
-	margin-bottom: 2em;
-}
-#content-pag {
-	float: right;
-}
-div.lcol {
-	width: 70%;
-	float: left;
-	margin-right: 5%;
-}
-div.rcol {
-	width: 25%;
-	float: left;
-}
-div.lcol.nofloat, div.rcol.nofloat {
-	float: none;
-}
-ol.archive li {
-	width: 210px;
-	margin-right: 10px;
-	margin-bottom: 10px !important;
-	display: inline-block;
-}
-ol.archive.content li {
-	width: 148px;
-}
-ol.archive.albums li {
-	width: 227px;
-}
-ol.archive.essays li {
-	width: 310px;
-	margin-bottom: 1em !important;
-}
-ol.archive.content li:nth-child(6), ol.archive.albums li:nth-child(4), ol.archive.essays li:nth-child(3) {
-	margin-right: 0;
-}
-p.unlisted {
-	background: #789dbb;
-	padding: 1em;
-	color: #d5e5f2;
-}
-
-/*
-	Helper classes
-	See: http://help.koken.me/customer/portal/articles/828695-css-classes
-*/
-
-/* wrapper for inserted media */
-.k-content-embed {
-	margin: 1em 0;
-}
-
-/* wrapper of the media asset itself */
-.k-content {
-	line-height: 0; /* resolves html whitespace */
-}
-
-/* wrapper for title/caption underneath photo/video, if turned on */
-.k-content-text {
-	padding: 0 0 1em;
-}
-
-/* wrapper for the media's title */
-.k-content-title {
-	display: block;
-	font-style: italic;
-}
-
-/* wrapper for the media's caption */
-.k-content-caption {
-}
-
-/* used for fallback text in console */
-.k-note {
-}
+}*/
 
 /* assigned to any link that links to the lightbox */
 .k-link-lightbox {
 	cursor: -webkit-zoom-in;
 	cursor: -moz-zoom-in;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 /* assigned to body by Image Protect plugin if Pinterest pinning is disabled */
@@ -273,7 +54,16 @@ body.k-image-protect-nopin a.social-pinterest {
 body {
 	padding: 0px;
 	margin: 0px;
-	font-family: "MuseoSlab-500";
+	font-family: "MuseoSlab-500", serif;
+	font-size: 16px;
+	font-variant: normal;
+	font-weight: 100;
+	/*-webkit-font-smoothing: antialiased;*/
+	color: #2A2A2A;
+}
+
+p {
+	font-family: "MuseoSans-500", sans-serif;
 }
 
 /* Header + Navigation */
@@ -284,6 +74,7 @@ body {
 	position: fixed;
 	z-index: 999;
 	top: 0;
+	transition: height 0.3s ease-in-out, opacity 0.2s;
 }
 #headnav h1 {
 	margin-top: 0;
@@ -297,21 +88,54 @@ body {
 }
 #headnav nav {
 	float: right;
-	font-size: 19px;
+	font-size: 1.1em;
+	letter-spacing: 0.05em;
 	top: 50%;
 	position: relative;
 	transform: translateY(-50%);
+}
+#headnav.stuck {
+	height: 40px;
+	overflow: hidden;
+	opacity: 0.8;
 }
 nav a {
 	color: white;
 	text-decoration: none;
 	margin-right: 40px;
+	font-weight: 300;
 }
 
 /* SECTIONS */
 section {
-	width: 100%;
-	height: 100vh;
+
+	/*	width: 100%;
+		height: 100vh;*/
+}
+.homeSection {
+	display: block;
+	padding: 4em 0;
+	margin: 0;
+}
+.homeSection h2 {
+	font-size: 3em;
+	margin: 0;
+}
+.homeSection p {
+	font-size: 1.5em;
+	line-height: 1.5em;
+	margin: 0;
+}
+.homeSection .flexy {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: flex-start;
+}
+.inner_margin {
+	max-width: 850px;
+	margin: 0 auto;
 }
 #content {
 	margin: 0 auto;
@@ -322,26 +146,63 @@ section {
 }
 #content p {
 	font-size: 25px;
-	font-family: "MuseoSans-500"
+	font-family: "MuseoSans-500";
+}
+.showInactiveMembers {
+	font-size: 1.3em;
+	border: 2.5px #009CFF solid;
+	border-radius: 5px;
+	padding: 10px;
+	color: #009CFF;
+	position: relative;
+	background-color: transparent;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s;
 }
 
+.showInactiveMembers:hover {
+	background-color:#009CFF;
+	color: white;
+}
+
+.fadeOverlay {
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.84) 44%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(44%,rgba(255,255,255,0.84)), color-stop(86%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
 /* Hero section */
 #hero {
 	background-color: #CDCDCD;
+	height: 100vh;
+	max-height: 500px;
+	overflow: hidden;
+	padding: 0;
 }
 #home-slideshow-text {
-	min-width: 450px;
-	min-height: 200px;
-	background-color: #2A2A2A;
+	max-width: 50%;
+	max-height: 300px;
+	background-color: rgba(42, 42, 42, 0.9);
 	position: absolute;
 	bottom: 80px;
 	color: white;
 	padding: 20px;
 	padding-bottom: 5px;
+	z-index: 1000;
+}
+#home-slideshow-text a {
+	text-decoration: none;
 }
 #home-slideshow-text h2 {
-	font-size: 50px;
-	margin-top: 0px;
+	color: white;
 }
 #home-slideshow-text span {
 	font-size: 19px;
@@ -373,41 +234,61 @@ section {
 /* About section */
 #onas {
 	background-color: white;
-	height: auto;
-	padding-bottom: 20px;
 }
 
 /* History section */
 #historie {
 	background-color: #CFCFCF;
-	height: auto;
-	padding-bottom: 50px;
 }
-#history {
-	font-family: "MuseoSans-500";
-	font-size: 25px;
+#historie p{
+	font-size: 1.2em;
 	column-count: 2;
-	column-gap: 80px;
-	column-width: 400px;
 	-webkit-column-count: 2;
-	-webkit-column-gap: 80px;
-	-webkit-column-width: 400px;
 }
-#historie h2 {
-	padding-top: 40px;
-}
+
 
 /* Members section */
 #clenove {
 	background-color: white;
-	height: 100vh;
+	margin: 0 0 50px 0;
 }
-.members {
-	column-count: 5;
-	-webkit-column-count: 5;
-	column-width: 180px;
-	-webkit-column-width: 180px;
-	height: 100%;
+.members li {
+	overflow: hidden;
+	width: 120px;
+	margin: 10px;
+	flex-grow: 1;
+	flex-basis: auto;
+}
+.members li a, .members li span {
+	display: block;
+}
+.members li .img {
+	height: 120px;
+	width: 120px;
+	border-radius: 100px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: center;
+}
+.members li img {
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 150%;
+	max-height: 150%;
+	height: auto;
+	width: auto;
+}
+.members .memberName {
+	text-align: center;
+	font-size: 1.1em;
+	margin-top: 10px;
+	color: #2A2A2A;
+	text-decoration: none;
+}
+.inactiveSection {
+	height: 80px;
+	overflow: hidden;
+	opacity: 0.8;
 }
 
 /* Repertoar section */
@@ -418,6 +299,14 @@ section {
 }
 #repertoar h2 {
 	color: white;
+}
+
+#repertoar .shows li {
+	overflow: hidden;
+	width: 120px;
+	margin: 10px;
+	flex-grow: 1;
+	flex-basis: auto;
 }
 
 /* Sponsors section */
@@ -512,27 +401,6 @@ section {
 /* MOBILE (LANDSCAPE/480PX)
 ----------------------------------------------- */
 @media only screen and (min-width:480px) and (max-width:767px) {
-	#container {
-		padding: 0 15px;
-		width: 436px;
-	}
-	header.top {
-		margin-top: 2rem;
-	}
-	ol.thumbs li {
-		width: 436px;
-	}
-	div.mcol {
-		width: 436px;
-		float: none;
-		margin: 0 0 1.1667em 0;
-	}
-	div.rcol {
-		width: 436px;
-		float: none;
-		margin: 0 0 24px 0;
-		font-size: 90%;
-	}
 	body.k-source-content div.head {
 		width: 436px;
 	}
