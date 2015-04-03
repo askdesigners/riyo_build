@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
-	<koken:meta />
-	<koken:title />
-
-	<koken:asset file="reset.css" common="true" />
-	<koken:asset file="css/kicons.css" />
-	<koken:asset file="css/kshare.css" />
-	<koken:settings />
-
-</head>
-
-<body>
-
-	<koken:if true="settings.show_social">
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-	</koken:if>
-
-	<div id="container">
-
-		<header class="top">
-			<div class="logo"></div>
-			<nav id="main">
-				<koken:navigation />
-			</nav>
-		</header>
-
-		<main>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<koken:meta />
+		<koken:title />
+		<koken:asset file="normalize.css" common="true" />
+		<koken:asset file="css/kicons.css" />
+		<koken:asset file="css/kshare.css" />
+		<koken:settings />
+	</head>
+	<body>
+		<koken:if true="settings.show_social">
+			<div id="fb-root"></div>
+			<script>
+				(function(d, s, id) {
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) return;
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+			</script>
+		</koken:if>
+			<div id="headnav">
+				<h1>
+					<a href="#hero">
+						<koken:include file="layouts/logo.html" />
+					</a>
+				</h1>
+				<nav>
+					<a href="#onas">O nás</a>
+					<a href="#historie">Trocha historie</a>
+					<a href="#clenove">Členové</a>
+					<a href="#repertoar">Repertoár</a>
+					<a href="#reference">Reference</a>
+				</nav>
+				<div class="fb-like" data-href="http://www.riyo.cz/" data-width="50px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+			</div>
