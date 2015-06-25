@@ -33,9 +33,20 @@ $(function(){
 
 });
 
-
-$('.memberName').click(function(){
+jQuery(function(){
+    $('.memberName').click(function(){
       $('#membermodal').load(this.href)
       console.log("done");
-      return false;
-})
+        var old_content=$('#clenove');
+        var pos = old_content.position();
+        var new_content=$('#membermodal').width(old_content.width())
+                                                                .height(old_content.height())
+            .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
+        $('#membermodal').fadeIn();
+        event.preventDefault();
+    })
+    $('.close').click(function (e) {
+        event.preventDefault();
+          $('#membermodal').fadeOut();
+    });
+});

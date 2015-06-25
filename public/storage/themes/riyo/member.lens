@@ -1,0 +1,9 @@
+<html>
+<head></head>
+<body>
+<koken:load>
+  <koken:loop>
+    <h1>{{ album.title }}</h1>
+  </koken:loop>
+</koken:load>
+</body>

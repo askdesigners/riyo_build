@@ -257,7 +257,8 @@ section {
 /* Members section */
 #clenove {
 	background-color: white;
-	margin: 0 0 50px 0;
+	margin: 0px;
+	z-index: 1;
 }
 .members li {
 	overflow: hidden;
@@ -298,10 +299,52 @@ section {
 	opacity: 0.8;
 }
 
+/* Member Modal css */
+
 #membermodal{
-	background: #333;
+	width: 100% !important;
+	position: relative;
+	display: none;
+	padding-top: 50px;
+	background: rgba(84, 84, 84, 0.95);
 	text-align: center;
-	color: white;	
+	color: white;
+	padding: 4em 0 !important;
+}
+
+#membermodal p{
+	width: 600px !important;
+}
+
+#membermodal figcaption{
+	max-width: 100% !important;
+}
+
+#memberpage{
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fa-times{
+	cursor: pointer;
+	font-size: 45px;
+	margin-top: 70px;
+}
+
+.content_main{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px !important;
+	background-size: cover !important;
+	background-position: 100% 100% !important;
+	margin: 0 auto;
+}
+
+.membername{
+	font-size: 40px;
 }
 
 /* Repertoar section */
