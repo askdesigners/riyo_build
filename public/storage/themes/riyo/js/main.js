@@ -33,6 +33,8 @@ $(function(){
 
 });
 
+/* Modal window for Members! */
+
 jQuery(function(){
     $('.memberName').click(function(){
       $('#membermodal').load(this.href)
