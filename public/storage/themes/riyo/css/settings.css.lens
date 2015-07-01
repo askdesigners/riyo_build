@@ -83,9 +83,10 @@ p {
 #headnav h1 svg {
 	max-height: 80px;
 	margin-left: 20px;
-	margin-top: 8px;
+	margin-top: 12px;
 	width: 135px;
 }
+
 #headnav nav {
 	float: right;
 	font-size: 1.1em;
@@ -183,7 +184,6 @@ section {
 #hero {
 	background-color: #CDCDCD;
 	height: 100vh;
-	max-height: 500px;
 	overflow: hidden;
 	padding: 0;
 }
@@ -192,22 +192,27 @@ section {
 	max-height: 300px;
 	background-color: rgba(42, 42, 42, 0.9);
 	position: absolute;
-	bottom: 80px;
+	bottom: 70px;
 	color: white;
 	padding: 20px;
-	padding-bottom: 5px;
-	z-index: 1000;
+	z-index: 998;
 }
+
 #home-slideshow-text a {
 	text-decoration: none;
 }
 #home-slideshow-text h2 {
 	color: white;
+	float: left;
 }
-#home-slideshow-text span {
-	font-size: 19px;
+
+#description {
+	font-size: 18px;
 	margin: 0px;
 	line-height: 1.8;
+	max-width: 450px !important;
+	float: left;
+	margin-top: 15px;
 }
 #morebutton {
 	margin: 0px;
@@ -218,17 +223,20 @@ section {
 	padding: 10px;
 	color: #009CFF;
 	position: relative;
+	margin-top: 45px;
 	transform: translateY(-50%);
 }
+
 #morebutton:hover {
 	color: white;
 	background-color: #009CFF;
 }
 #home-slideshow-text svg {
-	float: left;
 	margin-left: 0px;
 	padding: 0px;
-	margin-bottom: 25px;
+	margin-top: 5px;
+	width: auto;
+	margin-left: -5px;
 }
 
 /* About section */
@@ -250,7 +258,8 @@ section {
 /* Members section */
 #clenove {
 	background-color: white;
-	margin: 0 0 50px 0;
+	margin: 0px;
+	z-index: 1;
 }
 .members li {
 	overflow: hidden;
@@ -291,6 +300,54 @@ section {
 	opacity: 0.8;
 }
 
+/* Member Modal css */
+
+#membermodal{
+	width: 100% !important;
+	position: relative;
+	display: none;
+	padding-top: 50px;
+	background: rgba(84, 84, 84, 0.95);
+	text-align: center;
+	color: white;
+	padding: 4em 0 !important;
+}
+
+#membermodal p{
+	width: 600px !important;
+}
+
+#membermodal figcaption{
+	max-width: 100% !important;
+}
+
+#memberpage{
+	max-width: 900px;
+	margin: 0 auto;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fa-times{
+	cursor: pointer;
+	font-size: 45px;
+	margin-top: 70px;
+}
+
+.content_main{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px !important;
+	background-size: cover !important;
+	background-position: 100% 100% !important;
+	margin: 0 auto;
+}
+
+.membername{
+	font-size: 40px;
+}
+
 /* Repertoar section */
 #repertoar {
 	background-color: #009CFF;
@@ -307,6 +364,19 @@ section {
 	margin: 10px;
 	flex-grow: 1;
 	flex-basis: auto;
+}
+
+figure{margin: 5px;}
+figcaption .thumb{display: inline;}
+figcaption{display: inline-block; margin-left: 10px; max-width: 250px; padding}
+figcaption p{font-size: 16px !important;}
+
+
+figcaption h4 a{
+	color: white;
+	text-decoration: none;
+	font-size: 25px;
+	margin-top: 0px;
 }
 
 /* Sponsors section */

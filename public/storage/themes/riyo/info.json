@@ -8,7 +8,7 @@
 		"name": "Something Nice",
 		"link": "http://tellmesomethingnice.com"
 	},
-	"koken_version_required": "0.18.4",
+		"koken_version_required": "0.18.4",
 
 	"navigation_groups": {
 		"footer": {
