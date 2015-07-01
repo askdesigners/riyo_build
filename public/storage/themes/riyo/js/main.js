@@ -30,7 +30,6 @@ $(function(){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
     });
-
 });
 
 /* Modal window for Members! */
