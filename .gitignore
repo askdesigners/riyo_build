@@ -2,3 +2,4 @@
 .vagrant
 public/storage/cache/*
 *.sublime-workspace
+.cache

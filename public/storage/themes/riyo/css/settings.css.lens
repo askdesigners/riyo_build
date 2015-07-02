@@ -226,6 +226,7 @@ section {
 	margin-top: 45px;
 	transform: translateY(-50%);
 }
+
 #morebutton:hover {
 	color: white;
 	background-color: #009CFF;
