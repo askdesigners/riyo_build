@@ -49,18 +49,50 @@ jQuery(function(){
     $('.close').click(function (e) {
         event.preventDefault();
           $('#membermodal').fadeOut();
+          $( "#membermodal" ).empty();
     });
 });
 
 
-/* Inactive Members Roll-out*/
+/* Inactive Members Roll-out + Shows roll-out */
 
 jQuery(function(){
   $(".showInactiveMembers").click(function(event){
       event.preventDefault();
       $('.fadeOverlay').fadeOut();
-      $('.inactiveSection').animate({height:'485px'}, 500);
+      $('.inactiveSection').animate({height:'420px'}, 500);
       $('.inactiveSection').css("overflow","visible");
       $('.showInactiveMembers').fadeOut();
   });
+});
+
+jQuery(function(){
+  $(".showInactiveShows").click(function(event){
+      event.preventDefault();
+      $('.fadeout').fadeOut();
+      $('.inactiveshows').animate({height:'100%'}, 500);
+      $('.inactiveshows').css("overflow","visible");
+      $('.showInactiveShows').fadeOut();
+  });
+});
+
+/* Shows pop out */
+
+jQuery(function(){
+    $('.shows li a').click(function(){
+      $('#showmodal').load(this.href)
+      console.log("done");
+        var old_content=$('#repertoar');
+        var pos = old_content.position();
+        var new_content=$('#showmodal').width(old_content.width())
+                                                                .height(old_content.height())
+            .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
+        $('#showmodal').fadeIn();
+        event.preventDefault();
+    })
+    $('.close').click(function (e) {
+        event.preventDefault();
+          $('#showmodal').fadeOut();
+          $( "#showmodal" ).empty();
+    });
 });

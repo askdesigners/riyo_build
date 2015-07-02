@@ -149,6 +149,7 @@ section {
 	font-size: 25px;
 	font-family: "MuseoSans-500";
 }
+
 .showInactiveMembers {
 	font-size: 1.3em;
 	border: 2.5px #009CFF solid;
@@ -172,12 +173,12 @@ section {
 	position: absolute;
 	width: 100%;
 	height: 80px;
-	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.84) 44%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(44%,rgba(255,255,255,0.84)), color-stop(86%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.84) 44%,rgba(255,255,255,1) 86%,rgba(255,255,255,1) 100%); /* W3C */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 /* Hero section */
@@ -350,18 +351,94 @@ section {
 /* Repertoar section */
 #repertoar {
 	background-color: #009CFF;
-	height: 80vh;
+	padding-bottom: 80px;
 }
+
+#repertoar .fadeout{
+	position: absolute;
+	width: 100%;
+	height: 80px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,156,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,156,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#009cff',GradientType=0 ); /* IE6-9 */
+}
+
 #repertoar h2 {
 	color: white;
 }
 
 #repertoar .shows li {
+	display: inline;
 	overflow: hidden;
-	width: 120px;
+	width: auto;
 	margin: 10px;
-	flex-grow: 1;
-	flex-basis: auto;
+}
+
+#showmodal{
+	width: 100% !important;
+	position: relative;
+	display: none;
+	padding-top: 50px;
+	background: rgba(0, 0, 0, 0.8);
+	text-align: center;
+	color: white;
+	padding: 4em 0 !important;
+	text-align: left;
+}
+
+#showmodal article{
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+#showmodal .k-pulse{
+	max-width: 200px;
+}
+
+#showmodal p{font-size: 15px;}
+
+#showmodal img{
+	float: left;
+}
+
+.shows li a{
+	text-decoration: none;
+	float: left;
+}
+
+.shows li h4{margin: 0px;}
+
+.activeshows{
+	margin-bottom: 20px;
+}
+
+.showInactiveShows {
+	margin-bottom: 20px !important;
+	font-size: 1.3em;
+	border: 2.5px white solid;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	position: relative;
+	background-color: transparent;
+	display: block;
+	margin: 0 auto;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s;
+}
+
+.showInactiveShows:hover {
+	background-color:white;
+	color: #009CFF;
+}
+
+.inactiveshows{
+	height: 80px;
+	overflow: hidden;
 }
 
 figure{margin: 5px;}
