@@ -52,3 +52,16 @@ jQuery(function(){
           $('#membermodal').fadeOut();
     });
 });
+
+
+/* Inactive Members Roll-out*/
+
+jQuery(function(){
+  $(".showInactiveMembers").click(function(event){
+      event.preventDefault();
+      $('.fadeOverlay').fadeOut();
+      $('.inactiveSection').animate({height:'485px'}, 500);
+      $('.inactiveSection').css("overflow","visible");
+      $('.showInactiveMembers').fadeOut();
+  });
+});

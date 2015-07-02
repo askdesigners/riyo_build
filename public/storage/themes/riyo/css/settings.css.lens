@@ -264,8 +264,7 @@ section {
 	overflow: hidden;
 	width: 120px;
 	margin: 10px;
-	flex-grow: 1;
-	flex-basis: auto;
+	display: inline;
 }
 .members li a, .members li span {
 	display: block;
@@ -351,7 +350,6 @@ section {
 #repertoar {
 	background-color: #009CFF;
 	height: 80vh;
-	padding-top: 10px;
 }
 #repertoar h2 {
 	color: white;
