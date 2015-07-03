@@ -409,17 +409,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	background: rgba(0, 0, 0, 0.8);
 	text-align: center;
 	color: white;
-	padding: 4em 0 !important;
+	padding: 4.5em 0 !important;
 	text-align: left;
 }
 
 #showmodal article{
-	max-width: 900px;
+	max-width: 880px;
 	margin: 0 auto;
+}
+
+#showmodal #layout{
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #showmodal .k-pulse{
 	max-width: 200px;
+}
+
+#closeMe{
+	margin-bottom: 15px;
+	transform: translateY(-150%);
+	float: right;
+	position: relative;
 }
 
 #showmodal p{font-size: 15px;}
@@ -493,6 +506,9 @@ figcaption h4 a{
 	background-color: white;
 	height: 80vh;
 }
+
+#reference a{font-size: 24px !important; color: rgb(255,83,128);}
+#reference p{text-align: block;}
 
 @media (max-width: 960px) {
   nav a     { display: none; }
