@@ -5,10 +5,11 @@ $(function(){
     $(window).scroll(function(){
         var $nav = $('#headnav');
         var $logo = $('#headnav h1 svg');
+        var $width = $(window.width);
 
         if ($('body').scrollTop() < 40) {
 
-            if($nav.hasClass('stuck')){
+            if($nav.hasClass('stuck') + ($width < 960)){
                 console.log('removing class');
                 $nav.removeClass('stuck');
                 $logo.css("max-height", "80px");
@@ -17,7 +18,7 @@ $(function(){
 
         } else {
 
-            if(!$nav.hasClass('stuck')){
+            if(!$nav.hasClass('stuck') + ($width > 960)){
                 console.log('adding class');
                 $nav.addClass('stuck');
                 $logo.css("max-height", "35px");
@@ -114,6 +115,11 @@ $(".fa-bars").click(function(){
 
 jQuery(function(){
     $('#rclose').click(function(){
+      $('#rmenu').fadeOut();
+      $('.fa-bars').fadeIn();
+    })
+    $('#rmenu_in a').click(function(){
+      $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
       $('#rmenu').fadeOut();
       $('.fa-bars').fadeIn();
     })
