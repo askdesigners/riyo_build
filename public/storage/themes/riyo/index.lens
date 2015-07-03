@@ -112,9 +112,11 @@
 			<ul class="members activeMembers flexy">
 				<koken:loop>
 				<li>
+				<koken:link>
 					<span class="img">
 						<koken:img/>
 					</span>
+				</koken:link>
 					<koken:link class="memberName">
 					{{ content.title }}
 
@@ -136,8 +138,10 @@
 				<ul class="members inactiveMembers flexy">
 					<koken:loop>
 					<li>
+					<koken:link>
 						<span class="img">
 							<koken:img/>
+					</koken:link>
 						</span>
 						<koken:link class="memberName">
 						{{ content.title | content.filename }}

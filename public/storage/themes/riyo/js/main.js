@@ -42,7 +42,7 @@ $(function(){
 /* Modal window for Members! */
 
 jQuery(function(){
-    $('.memberName').click(function(){
+    $('.members a').click(function(){
       $('#membermodal').load(this.href)
       console.log("done");
         var old_content=$('#clenove');
@@ -52,6 +52,7 @@ jQuery(function(){
             .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
         $('#membermodal').fadeIn();
         event.preventDefault();
+        $('html,body').animate({scrollTop:$("#membermodal").offset().top - -150}, 1000);
     })
     $('.close').click(function (e) {
         event.preventDefault();
@@ -106,6 +107,14 @@ jQuery(function(){
 
 
 /* Mobile Menu stuff */
-$(".mobile").click(function(){
+$(".fa-bars").click(function(){
+  $('#rmenu').fadeIn();
+  $('.fa-bars').fadeOut();
+});
 
+jQuery(function(){
+    $('#rclose').click(function(){
+      $('#rmenu').fadeOut();
+      $('.fa-bars').fadeIn();
+    })
 });
