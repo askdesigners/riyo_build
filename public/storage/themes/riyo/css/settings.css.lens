@@ -52,8 +52,10 @@ body.k-image-protect-nopin a.social-pinterest {
 
 /* Misc */
 body {
-	padding: 0px;
-	margin: 0px;
+	width: 100%;
+	height: 100%;
+  margin: 0px;
+  padding: 0px;
 	font-family: "MuseoSlab-500", serif;
 	font-size: 16px;
 	font-variant: normal;
@@ -107,12 +109,31 @@ nav a {
 	font-weight: 300;
 }
 
+.mobile {
+	display: none;
+	width: 30px;
+	margin-right: 30px;
+	height: 30px;
+	float: right;
+	top: 50%;
+	position: relative;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.mobile i{
+	font-size: 30px;
+	color: white;
+}
+
 /* SECTIONS */
 section {
-
 	/*	width: 100%;
 		height: 100vh;*/
 }
+
+#hero {padding-left: 0px !important;padding-right: 0px !important;}
+
 .homeSection {
 	display: block;
 	padding: 4em 0;
@@ -137,6 +158,8 @@ section {
 .inner_margin {
 	max-width: 850px;
 	margin: 0 auto;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 #content {
 	margin: 0 auto;
@@ -469,6 +492,31 @@ figcaption h4 a{
 #reference {
 	background-color: white;
 	height: 80vh;
+}
+
+@media (max-width: 960px) {
+  nav a     { display: none; }
+  .mobile { display: inline-block; }
+	.homeSection h2{
+		font-size: 2em;
+	}
+	#description{
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+	#morebutton{
+		float: none;
+		margin: 0px;
+	}
+	#home-slideshow-text{
+		padding-bottom: 30px;
+	}
+}
+
+@media (max-width: 550px) {
+	#home-slideshow-text{
+		max-width: 100% !important;
+	}
 }
 
 /* TABLET

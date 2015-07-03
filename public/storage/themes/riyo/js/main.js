@@ -30,6 +30,11 @@ $(function(){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
     });
+
+    $("#morebutton").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
+    });
 });
 
 /* Modal window for Members! */
@@ -95,4 +100,9 @@ jQuery(function(){
           $('#showmodal').fadeOut();
           $( "#showmodal" ).empty();
     });
+});
+
+/* Mobile Menu stuff */
+$(".mobile").click(function(){
+
 });
