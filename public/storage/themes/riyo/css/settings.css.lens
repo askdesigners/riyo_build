@@ -373,7 +373,7 @@ section {
 }
 
 #membermodal p{
-	width: 600px !important;
+	max-width: 600px !important;
 }
 
 #membermodal figcaption{
