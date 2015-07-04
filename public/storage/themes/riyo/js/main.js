@@ -63,6 +63,27 @@ jQuery(function(){
     });
 });
 
+/* Shows pop out */
+
+jQuery(function(){
+    $('.shows li a').click(function(){
+      $('#showmodal').load(this.href)
+      console.log("done");
+        var old_content=$('#repertoar');
+        var pos = old_content.position();
+        var new_content=$('#showmodal').width(old_content.width())
+                                                                .height(old_content.height())
+            .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
+        $('#showmodal').fadeIn();
+        event.preventDefault();
+    })
+
+    $('.closeme').click(function (e) {
+        event.preventDefault();
+          $('#showmodal').fadeOut();
+          $('#showmodal').empty();
+      });
+});
 
 /* Inactive Members Roll-out + Shows roll-out */
 
@@ -102,28 +123,6 @@ jQuery(function(){
       $('.inactiveshows').fadeIn("slow");
     }, 500);
   });
-});
-
-/* Shows pop out */
-
-jQuery(function(){
-    $('.shows li a').click(function(){
-      $('#showmodal').load(this.href)
-      console.log("done");
-        var old_content=$('#repertoar');
-        var pos = old_content.position();
-        var new_content=$('#showmodal').width(old_content.width())
-                                                                .height(old_content.height())
-            .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
-        $('#showmodal').fadeIn();
-        event.preventDefault();
-    })
-
-    $('#closeMe').click(function (e) {
-        event.preventDefault();
-          $('#showmodal').fadeOut();
-          $('#showmodal').empty();
-      });
 });
 
 /* Mobile Menu stuff */
