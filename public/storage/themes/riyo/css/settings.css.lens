@@ -217,6 +217,7 @@ section {
 	margin: 0 auto;
 	cursor: pointer;
 	transition: background 0.3s, color 0.3s;
+	outline: none;
 }
 
 .showInactiveMembers:hover {
@@ -498,6 +499,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	margin: 0 auto;
 	cursor: pointer;
 	transition: background 0.3s, color 0.3s;
+	outline: none;
 }
 
 .showInactiveShows:hover {

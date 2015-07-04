@@ -70,6 +70,7 @@ jQuery(function(){
   $(".showInactiveMembers").click(function(event){
       event.preventDefault();
       $('.showInactiveMembers span').empty();
+      $('.showInactiveMembers').css("border","none");
       $('.showInactiveMembers i').show();
       $('.fadeOverlay').fadeOut();
       $('.inactiveSection').fadeOut();
@@ -88,6 +89,7 @@ jQuery(function(){
   $(".showInactiveShows").click(function(event){
       event.preventDefault();
       $('.showInactiveShows span').empty();
+      $('.showInactiveShows').css("border","none");
       $('.showInactiveShows i').show();
       $('.fadeout').fadeOut();
       $('.inactiveshows').fadeOut();
