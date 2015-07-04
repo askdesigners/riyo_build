@@ -353,6 +353,7 @@ section {
 	height: 80px;
 	overflow: hidden;
 	opacity: 0.8;
+	transition: height 0.6s ease-in-out;
 }
 
 /* Member Modal css */
@@ -504,9 +505,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	color: #009CFF;
 }
 
+.showInactiveMembers i{
+	display:none;
+}
+
+.showInactiveShows i{
+	display:none;
+}
+
 .inactiveshows{
 	height: 80px;
 	overflow: hidden;
+	margin-top: -10px;
 }
 
 figure{margin: 5px;}

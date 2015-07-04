@@ -34,6 +34,7 @@ $(function(){
       /* button show load function */
     $("#morebutton").click(function(event){
         var value = $("#morebutton").val();
+        var $list = $('.inactiveshows');
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
         $("#repertoar a:contains('" + value + "')").click();
@@ -68,20 +69,36 @@ jQuery(function(){
 jQuery(function(){
   $(".showInactiveMembers").click(function(event){
       event.preventDefault();
+      $('.showInactiveMembers span').empty();
+      $('.showInactiveMembers i').show();
       $('.fadeOverlay').fadeOut();
-      $('.inactiveSection').animate({height:'420px'}, 500);
-      $('.inactiveSection').css("overflow","visible");
-      $('.showInactiveMembers').fadeOut();
+      $('.inactiveSection').fadeOut();
+      $('.inactiveSection').animateMe("height", 300);
+      setTimeout(
+        function()
+        {
+          $('.inactiveSection').css("overflow","visible");
+          $('.showInactiveMembers').fadeOut();
+          $('.inactiveSection').fadeIn("slow");
+        }, 500);
   });
 });
 
 jQuery(function(){
   $(".showInactiveShows").click(function(event){
       event.preventDefault();
+      $('.showInactiveShows span').empty();
+      $('.showInactiveShows i').show();
       $('.fadeout').fadeOut();
-      $('.inactiveshows').animate({height:'100%'}, 500);
+      $('.inactiveshows').fadeOut();
+      $('.inactiveshows').animateMe("height", 300);
+      setTimeout(
+        function()
+        {
       $('.inactiveshows').css("overflow","visible");
       $('.showInactiveShows').fadeOut();
+      $('.inactiveshows').fadeIn("slow");
+    }, 500);
   });
 });
 
@@ -124,3 +141,22 @@ jQuery(function(){
       $('.fa-bars').fadeIn();
     })
 });
+
+/* Global animation function */
+
+jQuery.fn.animateMe = function(prop, speed, callback){
+    var elem, height, width;
+    return this.each(function(i, el){
+        el = jQuery(el), elem = el.clone().css({"height":"auto","width":"auto"}).appendTo(el.parent());
+        height = elem.css("height"),
+        width = elem.css("width"),
+        elem.remove();
+
+        if(prop === "height")
+            el.animate({"height":height}, speed, callback);
+        else if(prop === "width")
+            el.animate({"width":width}, speed, callback);
+        else if(prop === "both")
+            el.animate({"width":width,"height":height}, speed, callback);
+    });
+}

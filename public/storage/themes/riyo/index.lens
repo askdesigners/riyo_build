@@ -130,7 +130,7 @@
 			<koken:note>This area displays the active members.</koken:note>
 		</section>
 	</koken:load>
-	<button class="showInactiveMembers">Show all Members</button>
+	<button class="showInactiveMembers"><span>Show all Members</span><i class="fa fa-refresh fa-spin"></i></button>
 	<div class="inactiveSection">
 		<div class="fadeOverlay"></div>
 		<koken:load source="album" filter:id="5">
@@ -178,7 +178,7 @@
 		<koken:note>This area displays the active shows set.</koken:note>
 	</section>
 	</koken:load>
-	<button class="showInactiveShows">Show all Shows</button>
+	<button class="showInactiveShows"><span>Show all Shows</span><i class="fa fa-refresh fa-spin"></i></button>
 	<div class="fadeout"></div>
 	<koken:load source="essays" filter:featured="false">
 	<section class="inner_margin">
