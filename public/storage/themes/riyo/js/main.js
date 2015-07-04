@@ -42,10 +42,9 @@ $(function(){
 });
 
 /* Modal window for Members! */
-
-jQuery(function(){
+$( document ).ready(function() {
     $('.members a').click(function(){
-      $('#membermodal').load(this.href)
+      $('#membermodal').load(this.href);
       console.log("done");
         var old_content=$('#clenove');
         var pos = old_content.position();
@@ -54,9 +53,10 @@ jQuery(function(){
             .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
         $('#membermodal').fadeIn();
         event.preventDefault();
-        $('html,body').animate({scrollTop:$("#membermodal").offset().top - -150}, 1000);
-    })
-    $('.close').click(function (e) {
+        /* This needs more work to work in mobile and work properly */
+        $('html,body').animate({scrollTop:$("#membermodal").offset().top + 150}, 1000);
+    });
+    $('.close').click(function() {
         event.preventDefault();
           $('#membermodal').fadeOut();
           $('#membermodal').empty();
@@ -64,29 +64,26 @@ jQuery(function(){
 });
 
 /* Shows pop out */
-
-jQuery(function(){
+$( document ).ready(function() {
     $('.shows li a').click(function(){
-      $('#showmodal').load(this.href)
+      $('#showmodal').load(this.href);
+      event.preventDefault();
       console.log("done");
-        var old_content=$('#repertoar');
+        var old_content =$('#repertoar');
         var pos = old_content.position();
-        var new_content=$('#showmodal').width(old_content.width())
+        var new_content =$('#showmodal').width(old_content.width())
                                                                 .height(old_content.height())
             .css({top:pos.top,left:pos.left, 'z-index':999, position:'absolute'});
         $('#showmodal').fadeIn();
-        event.preventDefault();
-    })
+    });
 
-    $('.closeme').click(function (e) {
-        event.preventDefault();
-          $('#showmodal').fadeOut();
-          $('#showmodal').empty();
+    $('#showmodal').on( 'click', '.closeme', function () {
+      $('#showmodal').fadeOut();
+      $('#showmodal').empty();
       });
 });
 
 /* Inactive Members Roll-out + Shows roll-out */
-
 jQuery(function(){
   $(".showInactiveMembers").click(function(event){
       event.preventDefault();
@@ -135,16 +132,15 @@ jQuery(function(){
     $('#rclose').click(function(){
       $('#rmenu').fadeOut();
       $('.fa-bars').fadeIn();
-    })
+    });
     $('#rmenu_in a').click(function(){
       $('html,body').animate({scrollTop:$(this.hash).offset().top - 90}, 1000);
       $('#rmenu').fadeOut();
       $('.fa-bars').fadeIn();
-    })
+    });
 });
 
 /* Global animation function */
-
 jQuery.fn.animateMe = function(prop, speed, callback){
     var elem, height, width;
     return this.each(function(i, el){
@@ -160,4 +156,4 @@ jQuery.fn.animateMe = function(prop, speed, callback){
         else if(prop === "both")
             el.animate({"width":width,"height":height}, speed, callback);
     });
-}
+};
