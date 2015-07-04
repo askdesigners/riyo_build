@@ -99,13 +99,13 @@ jQuery(function(){
         $('#showmodal').fadeIn();
         event.preventDefault();
     })
+
     $('#closeMe').click(function (e) {
         event.preventDefault();
           $('#showmodal').fadeOut();
           $('#showmodal').empty();
-    });
+      });
 });
-
 
 /* Mobile Menu stuff */
 $(".fa-bars").click(function(){
