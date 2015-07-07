@@ -37,65 +37,17 @@ DirectoryIndex index.php index.html
 ## and also speed up the serving of cached images.
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteBase /
+	RewriteBase /riyo/koken
 
 	# Pass images requests back to PHP if they do not exist
-	RewriteCond %{REQUEST_METHOD} =GET
 	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_URI} /storage/cache/images(/(([0-9]{3}/[0-9]{3})|custom)/.*)$
-	RewriteRule . /i.php?path=%1 [L]
+	RewriteCond %{REQUEST_URI} /riyo/koken/storage/cache/images(/(([0-9]{3}/[0-9]{3})|custom)/.*)$
+	RewriteRule . /riyo/koken/i.php?path=%1 [L]
 
-	# Catch root requests (pjax)
-	RewriteCond %{REQUEST_METHOD} =GET
-	RewriteCond %{REQUEST_URI} ^/?$
-	RewriteCond %{QUERY_STRING} _pjax=
-	RewriteCond %{DOCUMENT_ROOT}/storage/cache/site/index/cache.phtml -f
-	RewriteRule .* /storage/cache/site/index/cache.phtml [L]
-
-	# Catch root requests
-	RewriteCond %{REQUEST_METHOD} =GET
-	RewriteCond %{REQUEST_URI} ^/?$
-	RewriteCond %{QUERY_STRING} !_pjax=
-	RewriteCond %{DOCUMENT_ROOT}/storage/cache/site/index/cache.html -f
-	RewriteRule .* /storage/cache/site/index/cache.html [L]
-
-	# Catch site requests (pjax)
-	RewriteCond %{REQUEST_METHOD} =GET
-	RewriteCond %{QUERY_STRING} _pjax=
-	RewriteCond %{DOCUMENT_ROOT}/storage/cache/site%{REQUEST_URI}cache.phtml -f
-	RewriteRule . /storage/cache/site%{REQUEST_URI}cache.phtml [L]
-
-	# Catch site requests
-	RewriteCond %{REQUEST_METHOD} =GET
-	RewriteCond %{QUERY_STRING} !_pjax=
-	RewriteCond %{HTTP_COOKIE} !share_to_tumblr=
-	RewriteCond %{DOCUMENT_ROOT}/storage/cache/site%{REQUEST_URI}cache.html -f
-	RewriteRule . /storage/cache/site%{REQUEST_URI}cache.html [L]
-
-	# CSS / RSS caching
-	RewriteCond %{REQUEST_METHOD} =GET
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{DOCUMENT_ROOT}/storage/cache/site%{REQUEST_URI} -f
-	RewriteRule . /storage/cache/site%{REQUEST_URI} [L]
-
-	# Rewrite any old URLs that still use index.php?/this/that syntax
-	RewriteCond %{QUERY_STRING} ^/(.*)
-	RewriteRule ^index.php %1? [R,L]
-
-	# Rewrite any old URLs that still use index.php/this/that syntax
-	RewriteRule ^index.php/(.*)$ $1 [R,L]
-
-	# Catch root requests
-	RewriteRule ^(index.php)?$ /app/site/site.php?url=/&base_folder=/ [L,QSA]
-
-	# Do not enable path rewriting for files that exist
+	# Redirect everything else to custom site path
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond	%{REQUEST_FILENAME} !favicon.ico
-
-	# For requests that are not actual files
-	# rewrite to index.php?/PATH
-	RewriteRule ^(.*)$ /app/site/site.php?url=/$1&base_folder=/ [L,QSA]
+	RewriteRule (.*)?$ /$1 [R=301,L]
 </IfModule>
 
 ## This ruleset ensures core Koken JS and CSS are cached

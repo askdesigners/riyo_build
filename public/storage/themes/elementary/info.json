@@ -8,13 +8,7 @@
 		"name": "Koken",
 		"link": "https://store.koken.me/authors/koken"
 	},
-	"templates": {
-    "Member": {
-      "name": "Member Page",
-      "description": "Displays a member page.",
-      "source": "album"
-    }
-  },
+	"koken_version_required": "0.18.4",
 
 	"navigation_groups": {
 		"footer": {

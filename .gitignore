@@ -3,7 +3,6 @@
 public/storage/cache/*
 *.sublime-workspace
 .cache
-
 *.cache
-
-public/storage/cache/api/acfb49e256d5ef4279e7f5fdcd2d6712.cache
+public/storage/cache/**/*.*
+public/storage/configuration/database.php
