@@ -40,30 +40,6 @@
 			</koken:if>
 			<a href="#repertoar" id="morebutton" value="">Více informací</a>
 		</div>
-		<script>
-			pulse.on( 'start', function() {
-				$('#ss_spinner').addClass('loading');
-			});
-			pulse.on( 'waiting', function(e) {
-				if (e) {
-					$('#ss_spinner').addClass('loading');
-				} else {
-					$('#ss_spinner').removeClass('loading');
-				}
-			});
-			pulse.on( 'dataloaded', function() {
-				$('#ss_spinner').removeClass('loading');
-			});
-			pulse.on( 'transitionstart', function(e) {
-				var data = e.data;
-
-				$('#home-slideshow-text').show();
-				$('#home-slideshow-title').html(data.title || data.filename);
-				$('#description').html(data.caption);
-				$('#home-slideshow-title-link').attr("href", data.url);
-				$('#morebutton').attr("value", data.title);
-			});
-		</script>
 	</section>
 
 </koken:if>
@@ -101,8 +77,7 @@
 </section>
 
 <section id="clenove" class="homeSection">
-<div id="membermodal">
-</div>
+	<div id="membermodal"></div>
 	<koken:load source="album" filter:id="2">
 		<section class="inner_margin ">
 			<h2>Členové</h2>
