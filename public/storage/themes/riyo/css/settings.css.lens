@@ -205,6 +205,13 @@ section {
 	font-family: "MuseoSans-500";
 }
 
+.inactiveButtonWrapper{
+	position: absolute;
+	bottom: 11px;
+	width: 100%;
+	z-index: 10;
+}
+
 .showInactiveMembers {
 	font-size: 1.3em;
 	border: 2.5px #009CFF solid;
@@ -229,6 +236,8 @@ section {
 	position: absolute;
 	width: 100%;
 	height: 80px;
+	z-index: 20;
+	bottom: 0;
 	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -322,8 +331,10 @@ section {
 .members li {
 	overflow: hidden;
 	width: 120px;
+	height: 120px;
 	margin: 10px;
 	display: inline;
+	position: relative;
 }
 .members li a, .members li span {
 	display: block;
@@ -335,6 +346,7 @@ section {
 	overflow: hidden;
 	vertical-align: middle;
 	text-align: center;
+	transition: background 0.1s;
 }
 .members li img {
 	min-width: 100%;
@@ -343,17 +355,45 @@ section {
 	max-height: 150%;
 	height: auto;
 	width: auto;
+	/*transition: opacity 0.1s;*/
 }
+
 .members .memberName {
+	opacity: 0;
+	overflow: hidden;
 	text-align: center;
 	font-size: 1.1em;
-	margin-top: 10px;
-	color: #2A2A2A;
+	color: white;
 	text-decoration: none;
+	position: relative;
+	top: -40%;
+	transform: translateY(-50%);
+	z-index: 10;
+	transition: opacity 0.3s, top 0.4s ease-in-out;
 }
+
+.members li:hover{
+	/*background: #009CFF;*/
+}
+
+.members li:hover .memberName{
+	opacity: 1;
+	top: -50%;
+}
+
+.members li:hover img{
+	opacity: 0;
+}
+
+.members li:hover .img{
+	background: #009CFF;
+}
+
+
 .inactiveSection {
 	height: 80px;
 	overflow: hidden;
+	position: relative;
 	opacity: 0.8;
 	transition: height 0.6s ease-in-out;
 }
@@ -419,12 +459,12 @@ section {
 	width: 100%;
 	height: 80px;
 	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,156,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,156,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#009cff',GradientType=0 ); /* IE6-9 */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,156,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,156,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#009cff',GradientType=0 ); /* IE6-9 */
 }
 
 #repertoar h2 {

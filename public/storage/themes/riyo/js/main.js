@@ -19,7 +19,10 @@ UI.prototype = {
         this.$memberModal = $('#membermodal'),
         this.$modal = $('#modal'),
         this.$showInactiveMembers = $(".showInactiveMembers"),
-        this.$morebutton = $("#morebutton");
+        this.$showInactiveShows = $(".showInactiveShows"),
+        this.$morebutton = $("#morebutton"),
+        this.$rmenu = $('#rmenu'),
+        this.$fabars = $(".fa-bars");
 
         var isMobile = function() {
             var check = false;
@@ -28,6 +31,7 @@ UI.prototype = {
         }
 
         this.bindEvents(isMobile);
+        this.initPulse();
     },
 
     bindEvents: function(isMobile){
@@ -45,6 +49,37 @@ UI.prototype = {
 
         this.$morebutton.click(function(event) {
             self.showEventDetails(self, this.hash, event);
+        });
+
+        this.$showInactiveMembers.click(function(event){
+
+            self.revealMore(this, event);
+
+        });
+
+        this.$showInactiveShows.click(function(event){
+
+            self.revealMore(this, event);
+
+        });
+
+        /* Mobile Menu stuff */
+        self.$fabars.click(function() {
+            self.$rmenu.fadeIn();
+            $(this).fadeOut();
+        });
+
+        $('#rclose').click(function() {
+            self.$rmenu.fadeOut();
+            self.$fabars.fadeIn();
+        });
+        
+        $('#rmenu_in a').click(function() {
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top - 90
+            }, 1000);
+            self.$rmenu.fadeOut();
+            self.$fabars.fadeIn();
         });
 
     },
@@ -73,7 +108,53 @@ UI.prototype = {
         }
     },
 
-    revealMore: function(){}
+    revealMore: function(element, event){
+        event.preventDefault();
+        
+        var $element = $(element),
+            $section = $element.closest('section').find('.inactiveSection');
+            $fadeOverlay = $element.closest('section').find('.fadeOverlay');
+        
+        $element.find('span').empty();
+        $element.css("border", "none");
+        $element.find('i').show();
+        $section.animateMe('height', 'auto');
+        
+        setTimeout(function() {
+            $fadeOverlay.animateMe('height', '0');
+            $element.fadeOut();
+        }, 500);
+    },
+
+    initPulse: function(){
+        var $spinner = $('#ss_spinner');
+        pulse.on( 'start', function() {
+            $spinner.addClass('loading');
+        });
+
+        pulse.on( 'waiting', function(e) {
+            if (e) {
+                $spinner.addClass('loading');
+            } else {
+                $spinner.removeClass('loading');
+            }
+        });
+
+        pulse.on( 'dataloaded', function() {
+            $spinner.removeClass('loading');
+        });
+
+        pulse.on( 'transitionstart', function(e) {
+            var data = e.data;
+
+            $('#home-slideshow-text').show();
+            $('#home-slideshow-title').html(data.title || data.filename);
+            $('#description').html(data.caption);
+            $('#home-slideshow-title-link').attr("href", data.url);
+            $('#morebutton').attr("value", data.title);
+        });
+
+    }
 
 };
 
@@ -144,81 +225,6 @@ $(function() {
         $showModal.empty();
     });
 
-    /* Inactive Members Roll-out + Shows roll-out */
-
-    $showInactiveMembers.click(function(event) {
-        event.preventDefault();
-        $showInactiveMembers.find('span').empty();
-        $(this).css("border", "none");
-        $(this).find('i').show();
-        $('.fadeOverlay').fadeOut();
-        $('.inactiveSection').fadeOut();
-        $('.inactiveSection').animateMe("height", 300);
-        setTimeout(
-            function() {
-                $('.inactiveSection').css("overflow", "visible");
-                $('.showInactiveMembers').fadeOut();
-                $('.inactiveSection').fadeIn("slow");
-            }, 500);
-    });
-
-    $(".showInactiveShows").click(function(event) {
-        event.preventDefault();
-        $('.showInactiveShows span').empty();
-        $('.showInactiveShows').css("border", "none");
-        $('.showInactiveShows i').show();
-        $('.fadeout').fadeOut();
-        $inactiveShows.fadeOut();
-        $inactiveShows.animateMe("height", 300);
-        setTimeout(function() {
-            $inactiveShows.css("overflow", "visible");
-            $('.showInactiveShows').fadeOut();
-            $inactiveShows.fadeIn("slow");
-        }, 500);
-    });
-
-    /* Mobile Menu stuff */
-    $(".fa-bars").click(function() {
-        $('#rmenu').fadeIn();
-        $('.fa-bars').fadeOut();
-    });
-
-
-    $('#rclose').click(function() {
-        $('#rmenu').fadeOut();
-        $('.fa-bars').fadeIn();
-    });
-    
-    $('#rmenu_in a').click(function() {
-        $('html,body').animate({
-            scrollTop: $(this.hash).offset().top - 90
-        }, 1000);
-        $('#rmenu').fadeOut();
-        $('.fa-bars').fadeIn();
-    });
-
-    pulse.on( 'start', function() {
-        $('#ss_spinner').addClass('loading');
-    });
-    pulse.on( 'waiting', function(e) {
-        if (e) {
-            $('#ss_spinner').addClass('loading');
-        } else {
-            $('#ss_spinner').removeClass('loading');
-        }
-    });
-    pulse.on( 'dataloaded', function() {
-        $('#ss_spinner').removeClass('loading');
-    });
-    pulse.on( 'transitionstart', function(e) {
-        var data = e.data;
-
-        $('#home-slideshow-text').show();
-        $('#home-slideshow-title').html(data.title || data.filename);
-        $('#description').html(data.caption);
-        $('#home-slideshow-title-link').attr("href", data.url);
-        $('#morebutton').attr("value", data.title);
-    });
 });
 
 /* Global animation function */
