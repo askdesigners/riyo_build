@@ -1,0 +1,19 @@
+<article>
+    <h3 class="modalTitle">
+        {{ essay.title }}
+        <i class="fa fa-times close"></i>
+    </h3>
+    <div class="slideShow"></div>
+    <div class="description">
+        {{ essay.content paragraphs="false" }}
+    </div>
+</article>
+<script>
+    var fig = $('#showpage figure');
+    if (fig.length > 0){
+        $('#showpage').addClass('twoCol');
+        fig.detach().appendTo('#showpage .slideShow');
+    } else {
+        $('#showpage').addClass('oneCol');
+    }
+</script>

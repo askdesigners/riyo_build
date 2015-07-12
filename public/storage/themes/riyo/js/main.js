@@ -11,18 +11,18 @@ UI.prototype = {
     constructor: UI,
 
     init: function(){
-
-        this.$nav = $('#headnav'),
-        this.$logo = this.$nav.find('h1 svg'),
-        this.$body = $('body'),
-        this.$inactiveShows = $('.inactiveshows'),
-        this.$memberModal = $('#membermodal'),
-        this.$modal = $('#modal'),
-        this.$showInactiveMembers = $(".showInactiveMembers"),
-        this.$showInactiveShows = $(".showInactiveShows"),
-        this.$morebutton = $("#morebutton"),
-        this.$rmenu = $('#rmenu'),
+        this.$nav = $('#headnav');
+        this.$logo = this.$nav.find('h1 svg');
+        this.$body = $('body');
+        this.$inactiveShows = $('.inactiveshows');
+        this.$memberModal = $('#membermodal');
+        this.$modal = $('#modal');
+        this.$showInactiveMembers = $(".showInactiveMembers");
+        this.$showInactiveShows = $(".showInactiveShows");
+        this.$morebutton = $("#morebutton");
+        this.$rmenu = $('#rmenu');
         this.$fabars = $(".fa-bars");
+        this.$modalContainer = $('#modal');
 
         var isMobile = function() {
             var check = false;
@@ -36,6 +36,9 @@ UI.prototype = {
 
     bindEvents: function(isMobile){
         var self = this;
+        
+        $('#headnav').data('size', 'big');
+
         $(window).scroll(function(){
             self.updateStuck.call(self);
         });
@@ -52,15 +55,11 @@ UI.prototype = {
         });
 
         this.$showInactiveMembers.click(function(event){
-
             self.revealMore(this, event);
-
         });
 
         this.$showInactiveShows.click(function(event){
-
             self.revealMore(this, event);
-
         });
 
         /* Mobile Menu stuff */
@@ -82,19 +81,49 @@ UI.prototype = {
             self.$fabars.fadeIn();
         });
 
+        $('.members a').click(function(event) {
+            self.showContentModal(event, this)
+        });
+
+        $('.shows li a').click(function(event) {
+            self.showContentModal(event, this)
+        });
+
     },
 
     showEventDetails: function(self, hash, event){
         event.preventDefault();
         var value = $(self.$morebutton).val();
         var $list = self.$inactiveShows;
+        console.log(value, $list);
         $('html,body').animate({
             scrollTop: $(hash).offset().top - 90
         }, 1000);
         $("#repertoar a:contains('" + value + "')").click();
     },
 
-    showContentModal: function(){},
+    showContentModal: function(event, clickedItem){
+        console.log('modal');
+        var self = this;
+        event.preventDefault();
+        self.$body.addClass('noscroll');
+        self.$modalContainer
+            .find('.modalInner')
+            .load(
+                clickedItem.href, 
+                function(){
+                    self.$modalContainer.fadeIn('slow');
+                    self.$modalContainer.find('.close').on('click', function(){
+                        self.$modalContainer.fadeOut('fast', function() {
+                            self.$body.removeClass('noscroll');
+                            self.$modalContainer
+                                .find('.modalInner')
+                                .empty();
+                        });
+                    })
+                });
+        
+    },
 
     updateStuck: function(){
         if (this.$body.scrollTop() < 40) {
@@ -119,6 +148,7 @@ UI.prototype = {
         $element.css("border", "none");
         $element.find('i').show();
         $section.animateMe('height', 'auto');
+        $section.css('opacity', '1');
         
         setTimeout(function() {
             $fadeOverlay.animateMe('height', '0');
@@ -159,73 +189,6 @@ UI.prototype = {
 };
 
 new UI();
-
-$(function() {
-    $('#headnav').data('size', 'big');
-    var $nav = $('#headnav'),
-        $logo = $nav.find('h1 svg'),
-        $body = $('body'),
-        $inactiveShows = $('.inactiveshows'),
-        $memberModal = $('#membermodal'),
-        $showModal = $('#showmodal'),
-        $showInactiveMembers = $(".showInactiveMembers");
-
-    /* button show load function */
-
-
-    $('.members a').click(function() {
-        event.preventDefault();
-        $memberModal.load(this.href);
-        console.log("done");
-        var old_content = $('#clenove');
-        var pos = old_content.position();
-        var new_content = $memberModal
-            .width(old_content.width())
-            .height(old_content.height())
-            .css({
-                top: pos.top,
-                left: pos.left,
-                'z-index': 999,
-                position: 'absolute'
-            });
-        $memberModal.fadeIn();
-        /* This needs more work to work in mobile and work properly */
-        $('html,body').animate({
-            scrollTop: $("#membermodal").offset().top + 150
-        }, 1000);
-    });
-
-    $('.close').click(function() {
-        event.preventDefault();
-        $memberModal.fadeOut();
-        $memberModal.empty();
-    });
-
-    /* Shows pop out */
-
-    $('.shows li a').click(function() {
-        $showModal.load(this.href);
-        event.preventDefault();
-        console.log("done");
-        var old_content = $('#repertoar');
-        var pos = old_content.position();
-        var new_content = $showModal.width(old_content.width())
-            .height(old_content.height())
-            .css({
-                top: pos.top,
-                left: pos.left,
-                'z-index': 999,
-                position: 'absolute'
-            });
-        $showModal.fadeIn();
-    });
-
-    $showModal.on('click', '.closeme', function() {
-        $showModal.fadeOut();
-        $showModal.empty();
-    });
-
-});
 
 /* Global animation function */
 jQuery.fn.animateMe = function(prop, speed, callback) {

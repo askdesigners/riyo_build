@@ -1,13 +1,11 @@
 <li class="show">
 
 	<figure>
-
-		<koken:link class="thumb" title="View {{ essay.title }}">
-				<koken:featured_image>
-					<koken:img />
-				</koken:featured_image>
-		</koken:link>
-
+		<div class="showThumb">
+			<koken:featured_image>
+				<koken:img />
+			</koken:featured_image>
+		</div>
 		<figcaption>
 
 				<h4>
@@ -18,7 +16,7 @@
 
 				<koken:not empty="essay.content">
 				<p>
-						{{ essay.excerpt }}
+					{{ essay.excerpt }}
 				</p>
 				</koken:not>
 

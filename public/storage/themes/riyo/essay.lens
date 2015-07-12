@@ -1,22 +1,8 @@
-<div id="layout">
+<div id="showpage">
 
 	<koken:load>
-
-		<div class="mcol">
-
-			<koken:include file="layouts/article.html" />
-
-		</div>
-
-		<div class="rcol">
-
-			<aside>
-
-			</aside>
-
-		</div>
-
-		<koken:else>
+		<koken:include file="layouts/show.html" />
+	<koken:else>
 
 		No essay found. Create one in Text.
 

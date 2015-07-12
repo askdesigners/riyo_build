@@ -1,68 +1,31 @@
 <koken:load>
-
-<div id="memberpage">
-
+	<div id="memberpage">
 		<figure>
-
 			<div class="figimg">
-
 				<koken:content_image>
-
 					<koken:link class="mag">
-
 						<koken:background class="content_main"/>
-
 					</koken:link>
-
 				</koken:content_image>
-
-				<koken:content_video>
-
-					<koken:video />
-
-				</koken:content_video>
-
 			</div>
-
 			<figcaption>
-
 				<koken:if true="settings.content_show_title">
-
-					<h3 class="membername">
+					<h3 class="modalTitle">
 						{{ content.title | content.filename }}
 					</h3>
-
 				</koken:if>
-
 				<koken:if true="settings.content_show_caption">
-
 					{{ content.caption paragraphs="true" }}
-
 				</koken:if>
-
 			</figcaption>
-
 		</figure>
-	<i class="fa fa-times close"></i>
+		<i class="fa fa-times close"></i>
 	</div>
-
-
-
-	<div class="rcol">
-
-	</aside>
-
-	</div>
-
+	<script>
+		var fig = $('.figimg a').removeAttr("href");
+	</script>
 <koken:else>
-
 	Nothing to see here
-
 </koken:load>
 
-</footer>
-
-</div>	<!-- close container -->
-
 <koken:asset file="share.js" common="true" />
-<koken:asset file="js/main.js"/>
