@@ -170,7 +170,7 @@ UI.prototype = {
             }
         });
 
-        pulse.on( 'dataloaded', function() {
+        pulse.on( 'dataloaded', function(e) {
             $spinner.removeClass('loading');
         });
 
