@@ -1,0 +1,17 @@
+<!-- <perch:showall /> -->
+<perch:content id="membername" type="text" label="Member Full Name" title="true" suppress="true" />
+<perch:content id="memberimage" type="image" label="Member Image" width="120" suppress="true" />
+<perch:content id="memberisactive" type="checkbox" label="Member is Active" value="1" suppress="true" />
+<perch:content id="memberjoindate" type="date" label="Date of joining RiYo" suppress="true" />
+<perch:content id="memberrole" type="text" label="Role played in the organization" suppress="true" />
+<perch:content id="memberbio" type="textarea" label="Short Biography of this person" suppress="true" />
+<li>
+    <a href="/riyo_build/membermodal.php?s=<perch:content id="memberslug" type="slug" for="membername"/>">
+        <span class="img">
+            <img src="<perch:content id="memberimage" type="image" label="Member Image" width="120" />" alt="">
+        </span>
+    </a>
+    <a class="memberName" href="/riyo_build/membermodal.php?s=<perch:content id="memberslug" type="slug" for="membername"/>">
+        <perch:content id="membername" type="text" label="Member Full Name" title="true"/>
+    </a>
+</li>

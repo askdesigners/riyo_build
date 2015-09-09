@@ -1,0 +1,34 @@
+<perch:content id="showtitle" type="text" label="Show Title" title="true" suppress="true" />
+<perch:content id="showdescription" type="textarea" label="Show Description" suppress="true"/>
+<perch:content id="showimage" type="image" label="Show Image" width="100" suppress="true" />
+<perch:content id="showisactive" type="checkbox" label="Show is Active" value="1" suppress="true" />
+<perch:content id="showisfeatured" type="checkbox" label="Show is Featured in Slideshow" value="1" suppress="true" />
+<perch:content id="showopendate" type="date" label="Date of opening" suppress="true" />
+<perch:content id="showfinaledate" type="date" label="Date of finale" suppress="true" />
+<perch:content id="theater" type="text" label="Theater of opening" suppress="true" />
+<perch:content id="theaterlocation" type="map" label="Location of Theater" suppress="true" />
+<perch:repeater id="showsupportimages" label="Additional Images">
+    <perch:content type="image" id="showsupportimage" label="Image" suppress="true" />
+    <perch:content type="text" id="showsupportcaption" label="Description" suppress="true" />
+</perch:repeater>
+
+<li class="show">
+    <figure>
+        <div class="showThumb">
+            <a href="/riyo_build/showmodal.php?s=<perch:content id="showslug" type="slug" for="showtitle"/>">
+                <img src="<perch:content id="showimage" type="image" label="Show Image" width="100" />" alt=""/>
+            </a>
+        </div>
+        <figcaption>
+            <h4>
+                <a href="/riyo_build/showmodal.php?s=<perch:content id="showslug" type="slug" for="showtitle"/>">
+                    <perch:content id="showtitle" type="text" label="Show Title" title="true" />
+                </a>
+            </h4>
+            <p>
+                <p><strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" /></p>
+                <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" /></p>
+            </p>
+        </figcaption>
+    </figure>
+</li>

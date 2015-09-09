@@ -1,0 +1,29 @@
+
+<!-- <perch:content id="current-slug" />
+<perch:content id="showisactive" type="checkbox" label="Show is Active" value="1"  />
+<perch:content id="showisfeatured" type="checkbox" label="Show is Featured in Slideshow" value="1" />
+<perch:content id="showimage" type="image" label="Show Image" />
+ -->
+
+<perch:showall />
+<article>
+    <h3 class="modalTitle">
+        <perch:content id="showtitle" type="text" label="Show Title" title="true" />
+        <i class="fa fa-times close"></i>
+    </h3>
+    <div class="slideShow"></div>
+    <div class="description">
+        <span class="openDate"><perch:content id="showopendate" type="date" label="Date of opening" /></span>
+        <span class="showfinaledate"> <perch:content id="showfinaledate" type="date" label="Date of finale" /></span>
+        <perch:content id="showdescription" type="textarea" label="Show Description" />
+    </div>
+</article>
+<script>
+    var fig = $('#showpage figure');
+    if (fig.length > 0){
+        $('#showpage').addClass('twoCol');
+        fig.detach().appendTo('#showpage .slideShow');
+    } else {
+        $('#showpage').addClass('oneCol');
+    }
+</script>
