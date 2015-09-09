@@ -174,7 +174,7 @@ section {
 .homeSection {
 	display: block;
 	padding: 4em 0;
-	margin: 0;
+	margin-top: 40px;
 	position: relative;
 }
 .homeSection *{
@@ -387,7 +387,7 @@ section {
 /* Members section */
 #clenove {
 	background-color: white;
-	margin: 0px;
+	/*margin: 0px;*/
 	z-index: 1;
 	position: relative !important;
 }
