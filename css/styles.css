@@ -707,6 +707,22 @@ section {
 	top: 0;
 }
 
+#modal #showModalSlideshow {
+	width: 50%;
+	float: left;
+	margin-right: 5%;
+}
+
+#modal #showModalSlideshow img {
+	width: 100%;
+}
+
+#modal #showModalDescription {
+	width: 40%
+	float: left;
+	text-align: left;
+}
+
 #showpage article{
 	max-width: 880px;
 	margin: 0 auto;
