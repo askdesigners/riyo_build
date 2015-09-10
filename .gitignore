@@ -6,3 +6,5 @@ public/storage/cache/*
 *.cache
 public/storage/cache/**/*.*
 public/storage/configuration/database.php
+perch/resources/**/*
+perch/resources/*

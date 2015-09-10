@@ -32,7 +32,7 @@
 		<link rel="stylesheet" href="css/kshare.css"/>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	</head>
-	<body>
+	<body class="debug">
 		<div id="rmenu">
 				<div id="rclose"><i class="fa fa-times"></i></div>
 			<div id="rmenu_in">
@@ -161,7 +161,7 @@
 				class="cycle-slideshow" 
 				data-cycle-fx="fade"
 			    data-cycle-pause-on-hover="false"
-			    data-cycle-speed="800">
+			    data-cycle-speed="1000">
 				<?php
 				    perch_content_custom('Shows', array(
 				        'page'=>'*',
@@ -182,14 +182,15 @@
 				    <h4><img src="img/cal.svg" /><span id="slideshowDate"></span></h4>
 				</div>
 			    <a href="#repertoar" id="morebutton" value="">Více informací</a>
+			    <div id="progress"></div>
 			</div>
 		</section>
 
-		<section id="onas" class="homeSection">
+		<section id="onas" class="homeSection bigTextSection">
 			<?php perch_content('About'); ?>
 		</section>
 
-		<section id="historie" class="homeSection">
+		<section id="historie" class="homeSection bigTextSection">
 			<svg class="borderSVG" viewBox="0 0 890 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
 			    <g>
 		            <path fill="#CFCFCF" d="M870.001,5.1775L855.001,-0.0075L839.999,5.1775L825,-0.0075L810,5.1775L794.999,-0.0075L780,5.1775L765,-0.0075L749.999,5.1775L735.001,-0.0075L720,5.1775L704.999,-0.0075L690,5.1775L674.999,-0.0075L659.999,5.1775L644.999,-0.0075L630.001,5.1775L615,-0.0075L600,5.1775L585.001,-0.0075L569.999,5.1775L554.999,-0.0075L540,5.1775L524.999,-0.0075L509.999,5.1775L495.001,-0.0075L479.999,5.1775L465,-0.0075L450,5.1775L434.999,-0.0075L420.001,5.1775L405.001,-0.0075L389.999,5.1775L375,-0.0075L360,5.1775L344.999,-0.0075L330,5.1775L314.999,-0.0075L299.999,5.1775L285,-0.0075L270,5.1775L255,-0.0075L240,5.1775L224.999,-0.0075L209.999,5.1775L194.999,-0.0075L180.001,5.1775L165,-0.0075L150,5.1775L135.001,-0.0075L119.999,5.1775L104.999,-0.0075L90.0002,5.1775L74.9992,-0.0075L59.9992,5.1775L45.0012,-0.0075L29.9992,5.1775L15.0002,-0.0075L0.0002,5.1775L0.0002,514.007L15.0002,508.822L29.9992,514.007L45.0012,508.822L59.9992,514.007L74.9992,508.822L90.0002,514.007L104.999,508.822L119.999,514.007L135.001,508.822L150,514.007L165,508.822L180.001,514.007L194.999,508.822L209.999,514.007L224.999,508.822L240,514.007L255,508.822L270,514.007L285,508.822L299.999,514.007L314.999,508.822L330,514.007L344.999,508.822L360,514.007L375,508.822L389.999,514.007L405.001,508.822L420.001,514.007L434.999,508.822L450,514.007L465,508.822L479.999,514.007L495.001,508.822L509.999,514.007L524.999,508.822L540,514.007L554.999,508.822L569.999,514.007L585.001,508.822L600,514.007L615,508.822L630.001,514.007L644.999,508.822L659.999,514.007L674.999,508.822L690,514.007L704.999,508.822L720,514.007L735.001,508.822L749.999,514.007L765,508.822L780,514.007L794.999,508.822L810,514.007L825,508.822L839.999,514.007L855.001,508.822L870.001,514.007L884.999,508.822L900,514.007L900,5.1775L884.999,-0.0075L870.001,5.1775Z"/>

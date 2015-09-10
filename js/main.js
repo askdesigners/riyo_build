@@ -28,6 +28,7 @@ UI.prototype = {
         this.$slideshowPlace = $('#slideshowPlace');
         this.$slideshowDate = $('#slideshowDate');
         this.$slideshowOverlay = $('#home-slideshow-text');
+        this.isInitialized = false;
 
         var isMobile = function() {
             var check = false;
@@ -41,6 +42,7 @@ UI.prototype = {
 
     bindEvents: function(isMobile){
         var self = this;
+        var progress = $('#progress');
         
         $('#headnav').data('size', 'big');
 
@@ -96,12 +98,15 @@ UI.prototype = {
 
         this.$slideshowContainer.on('cycle-update-view', $.proxy(self.updateSlideshowTitle, self));
         
-        this.$slideshowContainer.on('cycle-before', function(){
+        this.$slideshowContainer.on('cycle-before', function(e, opts){
             self.$slideshowOverlay.fadeOut('fast');
+            progress.stop(true).css( 'width', 0 );
         });
 
-        this.$slideshowContainer.on('cycle-after', function(){
+        this.$slideshowContainer.on('cycle-after', function(e, opts){
             self.$slideshowOverlay.fadeIn('slow');
+            if ( ! self.$slideshowContainer.is('.cycle-paused') )
+                progress.animate({ width: '100%' }, opts.timeout, 'linear' );
         });
     },
 
@@ -168,6 +173,10 @@ UI.prototype = {
     },
 
     updateSlideshowTitle: function(event, optionHash, slideOptionsHash, currentSlideEl){
+        if (!this.isInitialized){
+            this.$slideshowOverlay.fadeIn('fast');
+            this.isInitialized = true;
+        }
         this.$slideshowTitle.html(slideOptionsHash.title);
         this.$slideshowPlace.html(slideOptionsHash.place);
         this.$slideshowDate.html(slideOptionsHash.date);
@@ -176,7 +185,6 @@ UI.prototype = {
 
 };
 
-new UI();
 
 /* Global animation function */
 jQuery.fn.animateMe = function(prop, speed, callback) {
@@ -205,3 +213,7 @@ jQuery.fn.animateMe = function(prop, speed, callback) {
             }, speed, callback);
     });
 };
+
+$(document).ready(function($) {
+    new UI();
+});

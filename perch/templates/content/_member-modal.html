@@ -1,14 +1,15 @@
 <article>
     <h3 class="modalTitle">
-        <perch:content id="membername" type="text" label="Member Full Name" title="true"/>
         <i class="fa fa-times close"></i>
+        <perch:content id="membername" type="text" label="Member Full Name" title="true"/>
     </h3>
     <div class="memberImage">
         <img src="<perch:content id="memberimage" type="image" label="Member Image" />" alt="">
     </div>
-    <div class="description">
-        <span class="joinDate">Joined: <perch:content id="memberjoindate" type="date" label="Date of joining RiYo"/></span>
+    <div class="memberDescription">
         <span class="memberRole"><perch:content id="memberrole" type="text" label="Role played in the organization" /></span>
+        <span class="joinDate">Joined: <perch:content id="memberjoindate" type="date" label="Date of joining RiYo"/></span>
         <p><perch:content id="memberbio" type="textarea" label="Short Biography of this person" /></p>
     </div>
+    <div class="clear"></div>
 </article>
