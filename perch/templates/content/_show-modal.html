@@ -3,30 +3,36 @@
         <i class="fa fa-times close"></i>
         <perch:content id="showtitle" type="text" label="Show Title" title="true" />
     </h3>
-    <div id="showModalSlideshow" class="slideShow">
-        <div class="singleslide">
+    <div id="showModalSlideshow" 
+        class="slideShow cycle-slideshow">
+        <div class="singleSlide">
             <img src="<perch:content id="showimage" type="image" label="Show Image"/>" alt=""/>
         </div>
         <perch:repeater id="showsupportimages" label="Additional Images">
-            <div class="singleslide">
-                <img src="<perch:content type="image" id="showsupportimage" label="Image" />" data-cycle-desc="<perch:content type="text" id="showsupportcaption" label="Description" />"/>
+            <div class="singleSlide">
+                <img src="<perch:content type="image" id="showsupportimage" label="Image" />"/>
+                <p><perch:content type="text" id="showsupportcaption" label="Description" /></p>
             </div>
         </perch:repeater>
+        <div class="cycle-pager"></div>
     </div>
     <div id="showModalDescription">
-        <p><img class="cal" src="img/cal.svg" /><strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" format="d F, Y"/></p>
-        <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" format="d F, Y"/></p>
-        <p><img class="location" src="img/location.svg" /><strong>Theater: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
-        <p><perch:content id="showdescription" type="textarea" label="Show Description" /></p>
-        <!-- <div class="locationMap"><perch:content id="theaterlocation" type="map" label="Location of Theater"  width="300" height="200" zoom="15"/></div> -->
+        <div class="colLeft">
+            <p><img class="cal" src="img/cal.svg" /><strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" format="d F, Y"/></p>
+            <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" format="d F, Y"/></p>
+            <p><img class="location" src="img/location.svg" /><strong>Theater: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
+        </div>
+        <div class="colRight">
+            <p><perch:content id="showdescription" type="textarea" label="Show Description" /></p>
+        </div>
+        <div class="clear"></div>
     </div>
 </article>
 <script>
-    var fig = $('#showpage figure');
-    if (fig.length > 0){
-        $('#showpage').addClass('twoCol');
-        fig.detach().appendTo('#showpage .slideShow');
-    } else {
-        $('#showpage').addClass('oneCol');
-    }
+    $('#showModalSlideshow').cycle({
+        speed: 1000,
+        fx: "fade",
+        pauseOnHover: "false",
+        slides: ".singleSlide"
+    });
 </script>

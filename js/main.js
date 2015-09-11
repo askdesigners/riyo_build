@@ -131,6 +131,9 @@ UI.prototype = {
                     self.$modalContainer.fadeIn('slow');
                     self.$modalContainer.find('.close').on('click', function(){
                         self.$modalContainer.fadeOut('fast', function() {
+                            if ( $('#showModalSlideshow').length ) {
+                                $('#showModalSlideshow').cycle('destroy');
+                            }
                             self.$body.removeClass('noscroll');
                             self.$modalContainer
                                 .find('.modalInner')
