@@ -449,8 +449,12 @@ section {
 	overflow: hidden;
 	vertical-align: middle;
 	text-align: center;
-	transition: background 0.1s;
+	transition: background 0.2s;
 }
+.members li .noPic{
+    background: url(../img/missingperson.svg) no-repeat;
+    background-size: contain;
+}  
 .members li img {
 	min-width: 100%;
 	min-height: 100%;
@@ -472,7 +476,7 @@ section {
 	top: -40%;
 	transform: translateY(-50%);
 	z-index: 10;
-	transition: opacity 0.3s, top 0.4s ease-out;
+	transition: opacity 0.1s, top 0.4s ease-out;
 }
 
 .members li:hover{
@@ -654,7 +658,7 @@ section {
 }
 
 .shows li h4{
-	margin: 0px;
+	margin: 10px 0 0 0;
 }
 .shows li p img {
 	position: absolute;
@@ -667,8 +671,21 @@ section {
 	position: relative;
 }
 
+.shows .cal {
+    top: -1px;
+}
+
 .shows .location {
 	left: 3px;
+    top: 2px;
+}
+
+#showModalDescription .fbGallery{
+    top: 2px;
+}
+
+#showModalDescription .colLeft a{
+    color: #009CFF;
 }
 
 .shows figure{

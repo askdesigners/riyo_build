@@ -196,7 +196,8 @@
 				<!-- <a href="#reference">Reference</a> -->
 			</nav>
 			<div class="mobile"><i class="fa fa-bars"></i></div>
-			<div class="fb-like" data-href="http://www.riyo.cz/" data-width="50px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+			<!--<div class="fb-like" data-href="http://www.riyo.cz/" data-width="50px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>-->
+            <div class="fb-follow" data-href="https://www.facebook.com/groups/168500856576873/" data-layout="box_count" data-show-faces="true"></div>
 		</div>
 		<div id="modal"><div class="modalInner"></div></div> 
 		<section id="hero" class="homeSection">
@@ -356,8 +357,16 @@
 			js = d.createElement(s); js.id = id;
 			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
-	</body>
+            }(document, 'script', 'facebook-jssdk'));
+            
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=114901848533911";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
 
 </html>

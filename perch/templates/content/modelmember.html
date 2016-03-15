@@ -7,9 +7,13 @@
 <perch:content id="memberbio" type="textarea" label="Short Biography of this person" suppress="true" />
 <li>
     <a href="/riyo/membermodal.php?s=<perch:content id="memberslug" type="slug" for="membername"/>">
-        <span class="img">
-            <img src="<perch:content id="memberimage" type="image" label="Member Image" width="120" />" alt="">
-        </span>
+            <perch:if exists="memberimage">
+                <span class="img">
+                        <img src="<perch:content id="memberimage" type="image" label="Member Image" width="120" />" alt="">
+                </span> 
+            <perch:else />
+                <span class="img noPic"></span>
+            </perch:if>
     </a>
     <a class="memberName" href="/riyo/membermodal.php?s=<perch:content id="memberslug" type="slug" for="membername"/>">
         <perch:content id="membername" type="text" label="Member Full Name" title="true"/>
