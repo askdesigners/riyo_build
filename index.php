@@ -39,7 +39,7 @@
 			<div id="rmenu_in">
 				<a href="#onas">O nás</a>
 				<a href="#historie">Historie</a>
-				<a href="#clenove">Členové</a>
+				<a href="#clenove">Soubor</a>
 				<a href="#repertoar">Repertoár</a>
 				<!-- <a href="#reference">Reference</a> -->
 			</div>
@@ -190,8 +190,8 @@
 			</h1>
 			<nav>
 				<a href="#onas">O nás</a>
-				<a href="#historie">Trocha historie</a>
-				<a href="#clenove">Členové</a>
+				<a href="#historie">Historie</a>
+				<a href="#clenove">Soubor</a>
 				<a href="#repertoar">Repertoár</a>
 				<!-- <a href="#reference">Reference</a> -->
 			</nav>
