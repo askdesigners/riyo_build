@@ -1,18 +1,18 @@
 <?php
     define('PERCH_LICENSE_KEY', 'P21509-NVW458-UUV452-LNX045-UUB007');
 
-    define("PERCH_DB_USERNAME", 'ryancole_riyo');
-    define("PERCH_DB_PASSWORD", 'bKj5SG3DXnJKxBzc');
+    define("PERCH_DB_USERNAME", 'web');
+    define("PERCH_DB_PASSWORD", 'Lpfdopfrs');
     define("PERCH_DB_SERVER", "localhost");
-    define("PERCH_DB_DATABASE", "ryancole_riyoperch");
+    define("PERCH_DB_DATABASE", "riyo_cz");
     define("PERCH_DB_PREFIX", "perch2_");
     
     define('PERCH_TZ', 'Europe/Prague');
 
-    define('PERCH_EMAIL_FROM', 'ryan@askdesigners.eu');
-    define('PERCH_EMAIL_FROM_NAME', 'Ryan Cole');
+    define('PERCH_EMAIL_FROM', 'Mlch@mail.ctk.cz');
+    define('PERCH_EMAIL_FROM_NAME', 'Petr Mlch');
 
-    define('PERCH_LOGINPATH', '/riyo/perch');
+    define('PERCH_LOGINPATH', '/perch');
     define('PERCH_PATH', str_replace(DIRECTORY_SEPARATOR.'config', '', __DIR__));
     define('PERCH_CORE', PERCH_PATH.DIRECTORY_SEPARATOR.'core');
 
