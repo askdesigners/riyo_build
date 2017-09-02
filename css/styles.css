@@ -382,6 +382,7 @@ section {
 	float: left;
 	margin-top: 15px;
 }
+
 #morebutton {
 	margin: 0px;
 	float: right;
@@ -394,6 +395,17 @@ section {
 	margin-top: 45px;
 	box-sizing: border-box;
 	transform: translateY(-50%);
+}
+.showMoreHistory {
+	display: inherit;
+	margin: 45px auto 0;
+	font-size: 23px;
+	border: 2.5px #009CFF solid;
+	border-radius: 5px;
+	padding: 10px;
+	color: #009CFF;
+	position: relative;
+	box-sizing: border-box;
 }
 
 #morebutton:hover {
@@ -416,7 +428,13 @@ section {
 /* History section */
 #historie {
 	background-color: #CFCFCF;
+	max-height: 400px;
+	transition: max-height 0.3s;
 }
+#historie.reveal{
+	max-height: 5000px;
+}
+
 #historie p{
 	font-size: 1.2em;
 	column-count: 2;

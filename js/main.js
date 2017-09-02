@@ -19,6 +19,7 @@ UI.prototype = {
         this.$modal = $('#modal');
         this.$showInactiveMembers = $(".showInactiveMembers");
         this.$showInactiveShows = $(".showInactiveShows");
+        this.$showMoreHistory = $(".showMoreHistory");
         this.$morebutton = $("#morebutton");
         this.$rmenu = $('#rmenu');
         this.$fabars = $(".fa-bars");
@@ -67,6 +68,10 @@ UI.prototype = {
 
         this.$showInactiveShows.click(function(event){
             self.revealMore(this, event);
+        });
+        
+        this.$showMoreHistory.click(function(event){
+            self.revealMoreHistory(this, event);
         });
 
         /* Mobile Menu stuff */
@@ -173,6 +178,13 @@ UI.prototype = {
             $fadeOverlay.animateMe('height', '0');
             $element.fadeOut();
         }, 500);
+    },
+
+    revealMoreHistory: function(element, event){
+        event.preventDefault();
+        var $element = $(element);
+        $('#historie').addClass('reveal');
+        $element.fadeOut();
     },
 
     updateSlideshowTitle: function(event, optionHash, slideOptionsHash, currentSlideEl){
