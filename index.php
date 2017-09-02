@@ -122,7 +122,7 @@
 			    </g>
 			</svg>
 			<?php perch_content('History'); ?>
-			<div>
+			<div class="historyButtonWrapper">
         		<button class="showMoreHistory">
 		            <span>Show more</span>
 		        </button>
