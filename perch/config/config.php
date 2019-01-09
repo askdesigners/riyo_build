@@ -9,7 +9,7 @@
     
     define('PERCH_TZ', 'Europe/Prague');
 
-    define('PERCH_EMAIL_FROM', 'Mlch@mail.ctk.cz');
+    define('PERCH_EMAIL_FROM', 'mlch@mail.ctk.cz');
     define('PERCH_EMAIL_FROM_NAME', 'Petr Mlch');
 
     define('PERCH_LOGINPATH', '/perch');
@@ -19,9 +19,10 @@
     define('PERCH_RESFILEPATH', PERCH_PATH . DIRECTORY_SEPARATOR . 'resources');
     define('PERCH_RESPATH', PERCH_LOGINPATH . '/resources');
     
-    define('PERCH_MAP_JS', 'js/maps.js');
     define('PERCH_HTML5', true);
     define('PERCH_RWD', true);
+    
+    define('PERCH_GMAPS_API_KEY', 'AIzaSyDQv6ocPt-tJzgoou1LNyBzEH-789lNII4');
 
     // define('PERCH_DEBUG', true);
     

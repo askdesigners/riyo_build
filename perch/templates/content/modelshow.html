@@ -5,8 +5,13 @@
 <perch:content id="showisfeatured" type="checkbox" label="Show is Featured in Slideshow" value="1" suppress="true" />
 <perch:content id="showopendate" type="date" label="Date of opening" suppress="true" />
 <perch:content id="showfinaledate" type="date" label="Date of finale" suppress="true" />
+<perch:content id="showisongoing" type="checkbox" label="Show is still playing" value="1" suppress="true" />
 <perch:content id="theater" type="text" label="Theater of opening" suppress="true" />
-<perch:content id="asynctheaterlocation" type="asyncmap" label="Location of Theater" suppress="true"/>
+<perch:repeater id="showadditionaldates" label="Additional Open Dates">
+    <perch:content id="showadditionalopening" type="date" label="Date of opening" suppress="true" />
+    <perch:content id="showadditionalfinale" type="date" label="Date of finale" suppress="true" />
+    <perch:content id="theater" type="text" label="Theater of opening" suppress="true" />
+</perch:repeater>
 <perch:repeater id="showsupportimages" label="Additional Images">
     <perch:content type="image" id="showsupportimage" label="Image" suppress="true" />
     <perch:content type="text" id="showsupportcaption" label="Description" suppress="true" />
@@ -22,9 +27,19 @@
             </a>
             <button class="viewShow"><svg enable-background="new 0 0 24 24" id="Layer_1" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><g><path clip-rule="evenodd" d="M12,4C4.063,4-0.012,12-0.012,12S3.063,20,12,20    c8.093,0,12.011-7.969,12.011-7.969S20.062,4,12,4z M12.018,17c-2.902,0-5-2.188-5-5c0-2.813,2.098-5,5-5c2.902,0,5,2.187,5,5    C17.018,14.812,14.92,17,12.018,17z M12.018,9c-1.658,0.003-3,1.393-3,3c0,1.606,1.342,3,3,3c1.658,0,3-1.395,3-3    C15.018,10.392,13.676,8.997,12.018,9z" fill-rule="evenodd"/></g></g></svg></button>
             <figcaption>
-                <p><img class="cal" src="img/cal.svg" /><strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" format="d F, Y"/></p>
-                <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" format="d F, Y"/></p>
-                <p><img class="location" src="img/location.svg" /><strong>Theater: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
+                <p>
+                  <img class="cal" src="img/cal.svg" />
+                  <strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" format="d F, Y"/>
+                </p>
+
+                <perch:if id="showisongoing" value="1" match="eq">
+                    <p><strong>Stále na programu</strong></p>
+                </perch:if>
+                <perch:if id="showisongoing" value="1" match="neq">
+                    <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" format="d F, Y"/></p>
+                </perch:if>
+
+                <p><img class="location" src="img/location.svg" /><strong>Scéna: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
             </figcaption>
         </div>
         <h4>

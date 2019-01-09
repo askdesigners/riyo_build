@@ -140,7 +140,7 @@
 			</section>
 			<div class="inactiveButtonWrapper">
 		        <button class="showInactiveShows">
-		            <span>View all Shows</span><i class="fa fa-refresh fa-spin"></i>
+		            <span>Zobrazit všechny hry</span><i class="fa fa-refresh fa-spin"></i>
 		        </button>
 		    </div>
     		<div class="inactiveSection">
@@ -186,7 +186,7 @@
     		</section>
     		<div class="inactiveButtonWrapper">
         		<button class="showInactiveMembers">
-		            <span>Show all Members</span><i class="fa fa-refresh fa-spin"></i>
+		            <span>Všichni členové</span><i class="fa fa-refresh fa-spin"></i>
 		        </button>
     		</div>
     		<div class="inactiveSection">
@@ -216,7 +216,7 @@
 			<?php perch_content('History'); ?>
 			<div class="historyButtonWrapper">
         		<button class="showMoreHistory">
-		            <span>Show more</span>
+		            <span>Více</span>
 		        </button>
     		</div>
 		</section>

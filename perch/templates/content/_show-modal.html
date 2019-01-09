@@ -21,17 +21,20 @@
             <perch:if exists="showopendate">
                 <p><img class="cal" src="img/cal.svg" /><strong>Premiéra: </strong><perch:content id="showopendate" type="date" label="Date of opening" format="d F, Y"/></p>
             </perch:if>
-            <perch:if exists="showfinaledate">
+            <perch:if id="showisongoing" value="1" match="eq">
+                <p><strong>Stále na programu</p>
+            </perch:if>
+            <perch:if id="showisongoing" value="1" match="neq">
                 <p><strong>Derniéra: </strong><perch:content id="showfinaledate" type="date" label="Date of finale" format="d F, Y"/></p>
             </perch:if>
             <perch:if exists="theater">
-                <p><img class="location" src="img/location.svg" /><strong>Theater: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
+                <p><img class="location" src="img/location.svg" /><strong>Scéna: </strong><perch:content id="theater" type="text" label="Theater of opening"/></p>
             </perch:if>
             <perch:if exists="fb-gallery">
                 <p>
                     <img class="fbGallery" src="img/gallery.svg" />
                     <strong>
-                        <a href="<perch:content id="fb-gallery" type="text" label="Facebook image gallery" notes-before="Create an Album in FB, navigate to that album and copy the url here"/>" _target="blank">Image Gallery</a>
+                        <a href="<perch:content id="fb-gallery" type="text" label="Facebook Galerie" notes-before="Create an Album in FB, navigate to that album and copy the url here"/>" _target="blank">Fotogalerie</a>
                     </strong>
                 </p>
             </perch:if>
@@ -39,7 +42,7 @@
                 <p>
                     <img class="fbEvent" src="img/event.svg" />
                     <strong>
-                        <a href="<perch:content id="fb-event" type="text" label="Facebook Event" notes-before="Create an event in FB, then click the date under the title. Paste that link here" suppress="true"/>" _target="blank">Facebook Event Listing</a>
+                        <a href="<perch:content id="fb-event" type="text" label="Facebook události" notes-before="Create an event in FB, then click the date under the title. Paste that link here"/>" _target="blank">Facebook události</a>
                     </strong>
                 </p>
             </perch:if>
